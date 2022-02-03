@@ -55,7 +55,7 @@
             </a>
         </div>
             <a href="index.html" id="nav-menu-title">
-                <h1 class="font-bold text-xl text-white">Portfolio Website</h1>
+                <h1 class="font-bold text-xl text-white">Kieran P</h1>
             </a>
         </div>
         <div id="intro-banner-container">
@@ -256,14 +256,16 @@
                             </div>
                             <div class="box-content"  v-if="element.name == currentFilter">
                                 <button @click="item.dropdownOpen = !item.dropdownOpen" v-if="!item.dropdownOpen"
-                                    class="showToggle">Reveal Content</button>
+                                    class="showToggle">Show</button>
                                 <button @click="item.dropdownOpen = !item.dropdownOpen" v-if="item.dropdownOpen"
-                                    class="showToggle">Hide Content</button>
+                                    class="showToggle">Hide</button>
                                 <div v-if="item.dropdownOpen">
                                     <!-- <span style="height: 10px" class="block"></span> -->
                                     <h1 class="current-project font-bold">Current Project</h1>
                                     <span style="height: 30px" class="block"></span>
-                                    <img v-for="image in item.images" v-bind:src="image" alt="" class="content-image">
+                                    <div class="current-project-image-container">
+                                        <img v-for="image in item.images" v-bind:src="image" alt="" class="content-image">
+                                    </div>
                                     <div class="text-content">
                                         <h1 class="text-lg font-bold" style="font-size: 24px">Description</h1>
                                         <h2>{{item.description}}</h2>
@@ -296,15 +298,17 @@
                             </div>
                             <div class="box-content" v-if="element.name == currentFilter">
                                 <button @click="item.dropdownOpen = !item.dropdownOpen" v-if="!item.dropdownOpen"
-                                    class="showToggle">Reveal Content</button>
+                                    class="showToggle">Show</button>
                                 <button @click="item.dropdownOpen = !item.dropdownOpen" v-if="item.dropdownOpen"
-                                    class="showToggle">Hide Content</button>
+                                    class="showToggle">Hide</button>
                                 <div v-if="item.dropdownOpen">
                                     <!-- <span style="height: 10px" class="block"></span> -->
                                     <h1 class="current-project font-bold" v-if="item.currentProject == true">Current
                                         Project</h1>
                                     <span style="height: 30px" class="block" v-if="item.currentProject == true"></span>
-                                    <img v-for="image in item.images" v-bind:src="image" alt="" class="content-image">
+                                    <div class="current-project-image-container">
+                                        <img v-for="image in item.images" v-bind:src="image" alt="" class="content-image">
+                                    </div>
                                     <div class="text-content">
                                         <h1 class="text-lg font-bold" style="font-size: 24px">Description</h1>
                                         <h2>{{item.description}}</h2>
@@ -339,14 +343,16 @@
                             </div>
                             <div class="box-content" v-if="item.currentProject == true">
                                 <button @click="item.dropdownOpen = !item.dropdownOpen" v-if="!item.dropdownOpen"
-                                    class="showToggle">Reveal Content</button>
+                                    class="showToggle">Show</button>
                                 <button @click="item.dropdownOpen = !item.dropdownOpen" v-if="item.dropdownOpen"
-                                    class="showToggle">Hide Content</button>
+                                    class="showToggle">Hide</button>
                                 <div v-if="item.dropdownOpen">
                                     <!-- <span style="height: 10px" class="block"></span> -->
                                     <h1 class="current-project font-bold">Current Project</h1>
                                     <span style="height: 30px" class="block"></span>
-                                    <img v-for="image in item.images" v-bind:src="image" alt="" class="content-image">
+                                    <div class="current-project-image-container">
+                                        <img v-for="image in item.images" v-bind:src="image" alt="" class="content-image">
+                                    </div>
                                     <div class="text-content">
                                         <h1 class="text-lg font-bold" style="font-size: 24px">Description</h1>
                                         <h2>{{item.description}}</h2>
@@ -380,15 +386,19 @@
                             </div>
                             <div class="box-content">
                                 <button @click="item.dropdownOpen = !item.dropdownOpen" v-if="!item.dropdownOpen"
-                                    class="showToggle">Reveal Content</button>
+                                    class="showToggle">Show</button>
                                 <button @click="item.dropdownOpen = !item.dropdownOpen" v-if="item.dropdownOpen"
-                                    class="showToggle">Hide Content</button>
+                                    class="showToggle">Hide</button>
                                 <div v-if="item.dropdownOpen">
                                     <!-- <span style="height: 10px" class="block"></span> -->
                                     <h1 class="current-project font-bold" v-if="item.currentProject == true">Current
                                         Project</h1>
                                     <span style="height: 30px" class="block" v-if="item.currentProject == true"></span>
-                                    <img v-for="image in item.images" v-bind:src="image" alt="" class="content-image">
+                                    <div class="current-project-image-container">
+                                        <img v-for="image in item.images" v-bind:src="image" alt="" class="content-image">
+
+                                    </div>
+
                                     <div class="text-content">
                                         <h1 class="text-lg font-bold" style="font-size: 24px">Description</h1>
                                         <h2>{{item.description}}</h2>
@@ -413,7 +423,17 @@
                 </div>
             </div>
         </div>
-        <span style="height: 500px" class="block"></span>
+        <span style="height: 100px" class="block"></span>
+        <!-- <div class="content-box">
+            <h3 class="text-xl">Portfolio</h3>
+            <a>
+                <h1 class="font-bold" style="font-size: 48px">Blog</h1>
+
+            </a>
+            <span style="height: 50px" class="block"></span>
+            <iframe id="blog-frame" src="https://projectworkblogp.blogspot.com/" title="My Blog"></iframe>
+        </div>
+        <span style="height: 500px" class="block"></span> -->
     </div>
     <!-- <div id="devConsole" class="w-screen h-screen z-30 fixed top-0 bg-opacity-60 bg-black flex justify-center items-center">
         <div class="bg-zinc-700 rounded-lg p-4 flex items-center flex-col">
@@ -428,7 +448,7 @@
             </a>
         </div>
     </div> -->
-    <script src="app.js"></script>
+    <script src="/src/app.js"></script>
     <script>
 
 

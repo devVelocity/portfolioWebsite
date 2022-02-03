@@ -23,7 +23,7 @@ const app =  Vue.createApp({
         }
     },
     mounted(){
-        fetch('./JSON/projects.JSON')
+        fetch('/src/JSON/projects.JSON')
         .then(response => response.json())
         .then(data => {
             // console.log(data)
