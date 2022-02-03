@@ -245,7 +245,7 @@ h1,h2,h3,h4,h5,h6,a,p{
 }
 
 .content-box{
-    width: calc(100% - 80px);
+    width: calc(100% - 120px);
     margin-left: 50px;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -1188,6 +1188,41 @@ h1,h2,h3,h4,h5,h6,a,p{
 
 #about-me .text{
     color: white;
-    font-size: clamp(18px,3vw,20px)
+    font-size: clamp(18px,3vw,20px);
     max-width: 60ch;
+}
+
+#about-me .contact-button{
+    color: white;
+    padding: 20px;
+    border: 1px solid white;
+    border-radius: 40px;
+    font-size: clamp(18px,3vw,20px);
+    padding-right: 3.5rem;
+    position: relative;
+    transition: 0.2s ease-in-out;
+    transition-property: background,color;
+}
+
+#about-me .contact-button:hover{
+    background: white;
+    color: black;
+}
+
+#about-me .contact-button::after{
+    content: url('/src/images/extlnk.svg');
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 0.8rem;
+    right: 2.25rem;
+    bottom: 0px;
+    display: block;
+    filter: invert(90%);
+    transform: scale(0.1);
+    transition: 0.2s filter ease-in-out;
+}
+
+#about-me .contact-button:hover::after{
+    filter: invert(0%);
 }
