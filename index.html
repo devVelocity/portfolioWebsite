@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portfolio</title>
     <link href="/dist/style.css" rel="stylesheet">
     <link href="/dist/output.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,29 +29,33 @@
 
 <body class="">
     <div id="app" class="w-screen h-screen">
+        <span id="topofpage"></span>
         <div id="mobile-nav" :class="{activeNav: mobileNavOpen}">
             <h1>hi</h1>
         </div>
         <div class="w-full flex p-6 sticky z-20" style="height: 70px" id="nav-menu">
             <div id="nav-mobile-button" @click="mobileNavOpen = !mobileNavOpen">
             <div class="open-lines">
-                <span class="nav-mobile-line"></span>
-                <span class="nav-mobile-line"></span>
-                <span class="nav-mobile-line"></span>
+                <div class="nav-mobile-line"></div>
+                <div class="nav-mobile-line"></div>
+                <div class="nav-mobile-line"></div>
             </div>
             <div class="close-lines">
 
             </div>
         </div>
         <div id="nav-desktop-buttons">
-            <a href="index.html" class="nav-element">
-            Home
+            <a href="#aboutme" class="nav-element">
+            About
             </a>
             <a href="#skills" class="nav-element">
-            Skills
+                Skills
             </a>
             <a href="#projects" class="nav-element">
             Projects
+            </a>
+            <a href="#blog" class="nav-element">
+                Blog
             </a>
         </div>
             <a href="index.html" id="nav-menu-title">
@@ -136,6 +140,32 @@
                 <path
                     d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
                     class="shape-fill"></path>
+            </svg>
+        </div>
+        <div id="about-me">
+            <span style="height: 100px" class="block" id="aboutme"></span>
+            <div class="about-me-info">
+                <div class="el">
+                    <h1 class="grad-text font-bold title">About Me</h1>
+                    <span style="height: 30px" class="block"></span>
+                    <h3 class="text">Hello! I am a 17 year old Information Technology student in Greater Manchester. I have a passion in Programming, Software Development and Frontend Development. I also enjoy developing my Skills in User Interface and User Experience design, and using concepts in User Interface and User Experience design in my Frontend projects.</h3>
+                    <span style="height: 30px" class="block"></span>
+                </div>
+                <div class="el">
+                    <h1 class="grad-text font-bold title">Get in Touch!</h1>
+                    <span style="height: 50px" class="block"></span>
+                    <a href="https://www.linkedin.com/in/07030b20b/" class="contact-button">
+                        LinkedIn
+                    </a>
+
+                </div>
+            </div>
+        </div>
+        <div class="about-me-svg">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
             </svg>
         </div>
         <span style="height: 100px" class="block" id="skills"></span>
@@ -228,7 +258,6 @@
                     v-for="el in filterCriteria" @click="changeFilter(el)">{{el}}</h3>
             </div>
             <span style="height: 20px" class="block"></span>
-            <h3 class="text-xl pb-4" style="font-size: 24px">Sort by:</h3>
             <div class="filter-criteria-container">
                 <h3 class="filter-radio" style="font-size: 20px" v-bind:class="{active: !currentFilter2}"
                     @click="changeFilter2(false)">All</h3>
@@ -423,18 +452,50 @@
                 </div>
             </div>
         </div>
-        <span style="height: 100px" class="block"></span>
-        <!-- <div class="content-box">
-            <h3 class="text-xl">Portfolio</h3>
-            <a>
-                <h1 class="font-bold" style="font-size: 48px">Blog</h1>
-
-            </a>
-            <span style="height: 50px" class="block"></span>
-            <iframe id="blog-frame" src="https://projectworkblogp.blogspot.com/" title="My Blog"></iframe>
+        <span style="height: 150px" class="block" id="blog"></span>
+        <div id="blog-container">
+            <div class="blog-top-svg">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <defs>
+                        <linearGradient id="blogSVGGradient">
+                            <stop class="stop1" offset="0%" />
+                            <stop class="stop2" offset="100%" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                    <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                    <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+                </svg>
+            </div>
+            <div class="blog-fill-content">
+                <div class="blog-fill-inner">
+                    <span style="height: 20px" class="block"></span>
+                    <h3 class="text-xl">See what i'm currently working on!</h3>
+                    <a id="blog-link" href="https://projectworkblogp.blogspot.com/">
+                        <h1 class="font-bold" style="font-size: 48px">My Blog</h1>
+                        <svg width="30" height="30" viewBox="0 0 235 242" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M216 90C216 118.667 216 181.2 216 202C216 222.8 202 229.333 195 230C144.333 230 41 230 33 230C25 230 16.3333 218.667 13 213C13.3333 164.333 13.8 63.4 13 49C14.6667 44 21 33.8 33 33C45 32.2 94.6667 32.6667 118 33" stroke="black" stroke-width="24"/>
+                            <path d="M142 12H205L223 66" stroke="black" stroke-width="24"/>
+                            <path d="M100 152L202 16" stroke="black" stroke-width="24"/>
+                        </svg>
+                    </a>
+                    <span style="height: 50px" class="block"></span>
+                    <div class="iframe-container">
+                        <iframe src="https://projectworkblogp.blogspot.com/"></iframe>
+                    </div>
+                    <span style="height: 50px" class="block"></span>
+                </div>
+            </div>
+            <div class="blog-bottom-svg">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                    <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                    <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+                </svg>
+            </div>
         </div>
-        <span style="height: 500px" class="block"></span> -->
     </div>
+    <span style="height: 100px" class="block"></span>
     <!-- <div id="devConsole" class="w-screen h-screen z-30 fixed top-0 bg-opacity-60 bg-black flex justify-center items-center">
         <div class="bg-zinc-700 rounded-lg p-4 flex items-center flex-col">
             <h1 class="text-center text-xl font-bold p-2 text-white">Dev Console</h1>
