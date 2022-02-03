@@ -1,27 +1,32 @@
 class Header extends HTMLElement {
     connectedCallback() {
       this.innerHTML = `
-        <div class="w-full h-auto min-h-1 flex p-6 sticky z-20" id="nav-menu">
-        <div>
-            <a href="index.html" class="nav-element">
-                Home
-            </a>
-            <a href="#skills" class="nav-element">
-                Skills
-            </a>
-            <a href="#projects" class="nav-element">
-                Projects
-            </a>
-        </div>
-        <a href="index.html" id="nav-menu-title">
-            <h1 class="font-bold text-xl text-white">Portfolio Website</h1>
-        </a>
+        <div class="w-full flex p-6 sticky z-20" style="height: 70px" id="nav-menu">
+          <div id="nav-mobile-button" @click="console.log('hi')">
+            <span class="nav-mobile-line"></span>
+            <span class="nav-mobile-line"></span>
+            <span class="nav-mobile-line"></span>
+          </div>
+          <div id="nav-desktop-buttons">
+              <a href="index.html" class="nav-element">
+                  Home
+              </a>
+              <a href="#skills" class="nav-element">
+                  Skills
+              </a>
+              <a href="#projects" class="nav-element">
+                  Projects
+              </a>
+          </div>
+          <a href="index.html" id="nav-menu-title">
+              <h1 class="font-bold text-xl text-white">Portfolio Website</h1>
+          </a>
         </div>
       `;
     }
   }
 
-  customElements.define('main-header', Header)
+  // customElements.define('main-header', Header)
 
   // Sticky Background Fading
 

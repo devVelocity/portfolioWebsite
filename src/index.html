@@ -29,7 +29,36 @@
 
 <body class="">
     <div id="app" class="w-screen h-screen">
-        <main-header></main-header>
+        <div id="mobile-nav" :class="{activeNav: mobileNavOpen}">
+            <h1>hi</h1>
+        </div>
+        <div class="w-full flex p-6 sticky z-20" style="height: 70px" id="nav-menu">
+            <div id="nav-mobile-button" @click="mobileNavOpen = !mobileNavOpen">
+                <div class="open-lines">
+                    <span class="nav-mobile-line"></span>
+                    <span class="nav-mobile-line"></span>
+                    <span class="nav-mobile-line"></span>
+                </div>
+                <div class="close-lines">
+                    
+                </div>
+            </div>
+            <div id="nav-desktop-buttons">
+                <a href="index.html" class="nav-element">
+                    Home
+                </a>
+                <a href="#skills" class="nav-element">
+                    Skills
+                </a>
+                <a href="#projects" class="nav-element">
+                    Projects
+                </a>
+            </div>
+            <a href="index.html" id="nav-menu-title">
+                <h1 class="font-bold text-xl text-white">Portfolio Website</h1>
+            </a>
+          </div>
+        </div>
         <div id="intro-banner-container">
             <div id="intro-banner" class="">
                 <div id="left-svg-container">
@@ -78,27 +107,6 @@
     
                     </svg>
                 </div>
-                <script>
-                    const tween = KUTE.fromTo(
-                        '#lb1',
-                        { path: '#lb1' },
-                        { path: '#lb2' },
-                        { repeat: 999, duration: 3000, yoyo: true }
-                    )
-                    
-                    tween.start()
-
-                    const tween2 = KUTE.fromTo(
-                        '#cb1',
-                        { path: '#cb1' },
-                        { path: '#cb2' },
-                        { repeat: 999, duration: 3000, yoyo: true }
-                    )
-
-            
-                    tween2.start()
-
-                </script>
             </div>
             <div id="intro-banner-content">
                 <h3>Hello!</h3>

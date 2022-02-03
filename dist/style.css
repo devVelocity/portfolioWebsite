@@ -1,5 +1,5 @@
 :root{
-    --blue1: rgb(75,75,255)
+    --blue1: rgb(75,75,255);
     --accentButton: red;
     --mixinBackground: red;
 
@@ -10,7 +10,7 @@
     --maintextcolour: rgb(20,20,20);
 
     --introtextcolour: rgb(255,255,255);
-    --introtextshadow: rgb(0,0,0)
+    --introtextshadow: rgb(0,0,0);
 
     --imagescrollingtopbar: rgb(30,30,30);
     --imagescrollingButtonBG: rgb(20,20,20);
@@ -43,6 +43,9 @@
 
     --introbannerlow: rgba(40,40,107,1);
     --introbannerhigh: rgba(84,84,245,1);
+
+    --mobilenavnormal: rgba(255,255,255,1);
+    --mobilenavhover: rgba(255,255,255,0.3);
 }
 
 
@@ -428,7 +431,7 @@ h1,h2,h3,h4,h5,h6,a,p{
     width: 16vw;
     height: 100%;
     display: block;
-    transform: translateX(-16vw);
+    transform: translateX(-15.9vw);
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     background: rgb(50,50,50);
@@ -750,7 +753,7 @@ h1,h2,h3,h4,h5,h6,a,p{
     position: absolute;
     right: 0px;
     bottom: 0px;
-    transform: translateY(-30   px);
+    transform: translateY(-30px);
     width: 90vw;
     min-width: 800px;
     max-width: 1500px;
@@ -873,3 +876,64 @@ h1,h2,h3,h4,h5,h6,a,p{
 
 }
 
+#nav-mobile-button{
+    position: absolute;
+    left: 20px;
+    top: 5px;
+    width: 40px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#nav-mobile-button .nav-mobile-line{
+    display: inline-block;
+    width: 100%;
+    height: calc(100% / 20);
+    background: gray;
+    background: var(--mobilenavhover);
+    transition: 0.1s background ease-in-out;
+    border-radius: 10px;
+}
+
+#nav-mobile-button:hover .nav-mobile-line{
+    background: white;
+    background: var(--mobilenavnormal);
+}
+
+#nav-mobile-button:hover{
+    cursor: pointer;
+}
+
+@media screen and (max-width: 900px){
+    #nav-mobile-button{
+        opacity: 1;
+        pointer-events: all;
+    }
+    #nav-desktop-buttons{
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+#mobile-nav{
+    background: rgb(20,20,20);
+    background: var(--headerCol);
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 70px;
+    left: -100%;
+    z-index: 5;
+    pointer-events: none;
+    transition: 0.3s left ease-in-out;
+}
+
+#mobile-nav.activeNav{
+    left: 0%;
+}

@@ -11,6 +11,7 @@ const app =  Vue.createApp({
             ['All','HTML','CSS','JS','VueJS','JSON'],
             currentFilter: 'All',
             currentFilter2: false,
+            mobileNavOpen: false,
         }
     },
     methods:{
@@ -35,7 +36,31 @@ const app =  Vue.createApp({
         })
         .catch(error => console.log(error));
 
+        const tween = KUTE.fromTo(
+            '#lb1',
+            { path: '#lb1' },
+            { path: '#lb2' },
+            { repeat: 999, duration: 1000, yoyo: true }
+        )
+        
+        tween.start()
+
+        const tween2 = KUTE.fromTo(
+            '#cb1',
+            { path: '#cb1' },
+            { path: '#cb2' },
+            { repeat: 999, duration: 20000, yoyo: true }
+        )
+
+
+        tween2.start()
+
+        
+
     }
 })
 
 app.mount("#app")
+
+
+
