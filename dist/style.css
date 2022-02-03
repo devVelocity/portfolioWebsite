@@ -763,6 +763,7 @@ h1,h2,h3,h4,h5,h6,a,p{
     position: absolute;
     right: 0px;
     bottom: 0px;
+    transform: translateX(20px);
 }
 
 #intro-banner-content{
