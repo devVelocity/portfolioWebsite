@@ -1,5 +1,7 @@
 const THRESHOLD = 15
 
+const reduce = 240
+
             
 
 function handleMove(e){
@@ -18,7 +20,7 @@ function handleMove(e){
         
                 const rotateX = (THRESHOLD / 2 - horizontal * THRESHOLD).toFixed(2);
                 const rotateY = (vertical * THRESHOLD - THRESHOLD / 2).toFixed(2);
-                e.target.parentNode.parentNode.style.transform = `perspective(${clientWidth}px) rotateX(${rotateY - 290}deg) rotateY(${rotateX}deg) scale3d(1, 1, 1)`;
+                e.target.parentNode.parentNode.style.transform = `perspective(${clientWidth}px) rotateX(${rotateY - reduce}deg) rotateY(${rotateX}deg) scale3d(1, 1, 1)`;
                 // gsap.to(e.target.parentNode, {rotationX: rotateY - 300, rotationY: rotateX, perspective: clientWidth, scaleX: 1, scaleY: -1, scaleZ: -1})
             }else{
                 if(e.target.parentNode.classList.contains("item")){
@@ -30,7 +32,7 @@ function handleMove(e){
         
                     const rotateX = (THRESHOLD / 2 - horizontal * THRESHOLD).toFixed(2);
                     const rotateY = (vertical * THRESHOLD - THRESHOLD / 2).toFixed(2);
-                    e.target.parentNode.style.transform = `perspective(${clientWidth}px) rotateX(${rotateY - 290}deg) rotateY(${rotateX}deg) scale3d(1, 1, 1)`;
+                    e.target.parentNode.style.transform = `perspective(${clientWidth}px) rotateX(${rotateY - reduce}deg) rotateY(${rotateX}deg) scale3d(1, 1, 1)`;
                 }else{
                     if(e.target.classList.contains("item")){
                         const { clientX, clientY, currentTarget } = e;
@@ -41,7 +43,7 @@ function handleMove(e){
         
                         const rotateX = (THRESHOLD / 2 - horizontal * THRESHOLD).toFixed(2);
                         const rotateY = (vertical * THRESHOLD - THRESHOLD / 2).toFixed(2);
-                        e.target.style.transform = `perspective(${clientWidth}px) rotateX(${rotateY - 290}deg) rotateY(${rotateX}deg) scale3d(1, 1, 1)`;      
+                        e.target.style.transform = `perspective(${clientWidth}px) rotateX(${rotateY - reduce}deg) rotateY(${rotateX}deg) scale3d(1, 1, 1)`;      
                         // gsap.to(e.target, {rotationX: rotateY - 300, rotationY: rotateX, perspective: clientWidth, scaleX: 1, scaleY: -1, scaleZ: -1})
                     }
                 }
