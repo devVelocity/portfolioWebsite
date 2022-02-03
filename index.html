@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portfolio</title>
     <link href="/dist/style.css" rel="stylesheet">
     <link href="/dist/output.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,12 +23,13 @@
     <script src="/dist/current/JS/devconsole.js"></script>
     <script src="https://unpkg.com/vue@next"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/kute.js@2.2.2/dist/kute.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/kute.js@2.2.2/dist/kute.min.js"></script>
 
 </head>
 
 <body class="">
     <div id="app" class="w-screen h-screen">
+        <span id="topofpage"></span>
         <div id="mobile-nav" :class="{activeNav: mobileNavOpen}">
             <h1>hi</h1>
         </div>
@@ -44,14 +45,17 @@
             </div>
         </div>
         <div id="nav-desktop-buttons">
-            <a href="index.html" class="nav-element">
-            Home
+            <a href="#aboutme" class="nav-element">
+            About
             </a>
             <a href="#skills" class="nav-element">
-            Skills
+                Skills
             </a>
             <a href="#projects" class="nav-element">
             Projects
+            </a>
+            <a href="#blog" class="nav-element">
+                Blog
             </a>
         </div>
             <a href="index.html" id="nav-menu-title">
@@ -139,18 +143,22 @@
             </svg>
         </div>
         <div id="about-me">
-            <span style="height: 50px" class="block" id="skills"></span>
+            <span style="height: 100px" class="block" id="aboutme"></span>
             <div class="about-me-info">
-                <h1 class="grad-text font-bold title">About Me</h1>
-                <span style="height: 30px" class="block" id="skills"></span>
-                <h3 class="text">Hello! I am a 17 year old Information Technology student in Greater Manchester. I have a passion in Programming, Software Development and Frontend Development. I also enjoy developing my Skills in User Interface and User Experience design, and using concepts in User Interface and User Experience design in my Frontend projects.</h3>
-                <span style="height: 30px" class="block" id="skills"></span>
-                <h1 class="grad-text font-bold title">Get in Touch!</h1>
-                <span style="height: 50px" class="block" id="skills"></span>
-                <a href="https://www.linkedin.com/in/07030b20b/" class="contact-button">
-                    LinkedIn
-                </a>
-                <span style="height: 150px;" class="block" id="skills"></span>
+                <div class="el">
+                    <h1 class="grad-text font-bold title">About Me</h1>
+                    <span style="height: 30px" class="block"></span>
+                    <h3 class="text">Hello! I am a 17 year old Information Technology student in Greater Manchester. I have a passion in Programming, Software Development and Frontend Development. I also enjoy developing my Skills in User Interface and User Experience design, and using concepts in User Interface and User Experience design in my Frontend projects.</h3>
+                    <span style="height: 30px" class="block"></span>
+                </div>
+                <div class="el">
+                    <h1 class="grad-text font-bold title">Get in Touch!</h1>
+                    <span style="height: 50px" class="block"></span>
+                    <a href="https://www.linkedin.com/in/07030b20b/" class="contact-button">
+                        LinkedIn
+                    </a>
+
+                </div>
             </div>
         </div>
         <div class="about-me-svg">
@@ -444,7 +452,7 @@
                 </div>
             </div>
         </div>
-        <span style="height: 150px" class="block"></span>
+        <span style="height: 150px" class="block" id="blog"></span>
         <div id="blog-container">
             <div class="blog-top-svg">
                 <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">

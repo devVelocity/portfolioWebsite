@@ -245,8 +245,8 @@ h1,h2,h3,h4,h5,h6,a,p{
 }
 
 .content-box{
-    width: calc(100% - 120px);
-    margin-left: 50px;
+    width: calc(100% - 220px);
+    margin-left: 100px;
     margin-top: 30px;
     margin-bottom: 30px;
 }
@@ -1158,9 +1158,16 @@ h1,h2,h3,h4,h5,h6,a,p{
 #about-me .about-me-info{
     position: relative;
     z-index: 4;
-    width: calc(100% - 80px);
-    margin-left: 50px;
+    width: calc(100% - 180px);
+    margin-left: 100px;
     padding-top: 50px;
+    display: flex;
+    gap: 150px;
+    padding-bottom: 150px;
+}
+
+#about-me .about-me-info .el:first-of-type{
+    max-width: 65ch;
 }
 
 @media screen and (max-width: 900px){
@@ -1170,6 +1177,15 @@ h1,h2,h3,h4,h5,h6,a,p{
         width: calc(100% - 80px);
         margin-left: 30px;
         padding-top: 50px;
+        flex-direction: column;
+        gap: 50px;
+        padding-bottom: 200px;
+    }
+    #about-me .about-me-info .el{
+        width: 100%;
+    }
+    #about-me .about-me-info .el:first-of-type{
+        max-width: 65ch;
     }
 
 }
@@ -1189,7 +1205,10 @@ h1,h2,h3,h4,h5,h6,a,p{
 #about-me .text{
     color: white;
     font-size: clamp(18px,3vw,20px);
-    max-width: 60ch;
+}
+
+.about-me-info .el{
+    width: 50%;
 }
 
 #about-me .contact-button{

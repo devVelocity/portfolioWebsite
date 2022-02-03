@@ -1,6 +1,6 @@
 const THRESHOLD = 15
 
-const reduce = 250
+const reduce = 235
 
             
 
