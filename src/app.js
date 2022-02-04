@@ -36,6 +36,8 @@ const app =  Vue.createApp({
         })
         .catch(error => console.log(error));
 
+
+
         const tween = KUTE.fromTo(
             '#lb1',
             { path: '#lb1' },

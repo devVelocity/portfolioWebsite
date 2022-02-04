@@ -145,18 +145,25 @@
         <div id="about-me">
             <span style="height: 100px" class="block" id="aboutme"></span>
             <div class="about-me-info">
-                <div class="el">
+                <div class="el about-me-el">
                     <h1 class="grad-text font-bold title">About Me</h1>
                     <span style="height: 30px" class="block"></span>
                     <h3 class="text">Hello! I am a 17 year old Information Technology student in Greater Manchester. I have a passion in Programming, Software Development and Frontend Development. I also enjoy developing my Skills in User Interface and User Experience design, and using concepts in User Interface and User Experience design in my Frontend projects.</h3>
                     <span style="height: 30px" class="block"></span>
                 </div>
-                <div class="el">
+                <div class="el about-me-el">
+                    
                     <h1 class="grad-text font-bold title">Get in Touch!</h1>
-                    <span style="height: 50px" class="block"></span>
+                    <span style="height: 30px" class="block"></span>
                     <a href="https://www.linkedin.com/in/07030b20b/" class="contact-button">
                         LinkedIn
                     </a>
+                    <a href="https://github.com/exeProgram" class="contact-button">
+                        GitHub
+                    </a>
+                    <!-- <a href="https://github.com/exeProgram" class="contact-button">
+                        Contact Form
+                    </a> -->
 
                 </div>
             </div>
@@ -169,7 +176,7 @@
             </svg>
         </div>
         <span style="height: 100px" class="block" id="skills"></span>
-        <div class="content-box">
+        <div class="content-box" id="skills-container-container">
             <h3 class="text-xl">Portfolio</h3>
             <h1 class="font-bold" style="font-size: 48px">My Skills</h1>
             <span style="height: 50px" class="block"></span>
@@ -439,8 +446,8 @@
                                         <div class="created-with-container">
                                             <div class="created-with-box" v-for="el in item.elementsused">
                                                 <img v-if="el.logo != ''" v-bind:src="el.logo">
-                                                <div v-if="el.logo == ''"
-                                                    style="width: 30px; height: 30px; margin-right: 15px"></div>
+                                                <!-- <div v-if="el.logo == ''"
+                                                    style="width: 30px; height: 30px; margin-right: 15px"></div> -->
                                                 <h3 class="font-bold">{{el.name}}</h3>
                                             </div>
                                         </div>
@@ -481,7 +488,7 @@
                     </a>
                     <span style="height: 50px" class="block"></span>
                     <div class="iframe-container">
-                        <iframe src="https://projectworkblogp.blogspot.com/"></iframe>
+                        <iframe id="blog-container-frame" src="https://projectworkblogp.blogspot.com/"></iframe>
                     </div>
                     <span style="height: 50px" class="block"></span>
                 </div>
@@ -492,6 +499,58 @@
                     <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
                     <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
                 </svg>
+            </div>
+        </div>
+        <span style="height: 100px" class="block"></span>
+        <span id="footeranchor"></span>
+        <div id="footer">
+            <div class="footer-svg-wave">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                    <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                    <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+                </svg>
+            </div>
+            <div class="footer-content">
+                <span style="height: 35px" class="block"></span>
+                <div class="inner">
+                    <div class="flex-el footer-flex-el">
+                        <h1 class="font-bold grad-text">Website made with</h1>
+                        <h3 class="li-before footer-madewith-liitem">HTML</h3>
+                        <h3 class="li-before footer-madewith-liitem">CSS</h3>
+                        <h3 class="li-before footer-madewith-liitem">JavaScript</h3>
+                        <h3 class="li-before footer-madewith-liitem">VueJS</h3>
+                        <h3 class="li-before footer-madewith-liitem">KUTE</h3>
+                        <h3 class="li-before footer-madewith-liitem">GSAP</h3>
+                        <span class="block" style="height:30px"></span>
+                        <h3 class="li-before footer-madewith-liitem">Lots of time</h3>
+                        <h3 class="li-before footer-madewith-liitem"> > 2,000 Cups of Tea</h3>
+                    </div>
+                    <!-- <div class="flex-el">
+                        <h1 class="font-bold grad-text">Also made with:</h1>
+                    </div> -->
+                    <div class="flex-el footer-flex-el">
+                        <h1 class="font-bold grad-text">Get in Touch</h1>
+                        <a href="https://www.linkedin.com/in/07030b20b/" class="contact-button">
+                            LinkedIn
+                        </a>
+                        <br>
+                        <a href="https://github.com/exeProgram" class="contact-button">
+                            GitHub
+                        </a>
+                        <br>
+                        <!-- <a href="https://github.com/exeProgram" class="contact-button">
+                            Contact Form
+                        </a> -->
+                        
+                    </div>
+                    <div class="flex-el footer-flex-el">
+                        <h1 class="font-bold grad-text">Blog</h1>
+                        <a href="https://projectworkblogp.blogspot.com/" class="contact-button">
+                            Blog
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -510,115 +569,7 @@
         </div>
     </div> -->
     <script src="/src/app.js"></script>
-    <script>
-
-
-        // let boxV2 = gsap.timeline({
-        //     scrollTrigger:{
-        //         trigger: '.box-side-2',
-        //         scrub: 1,
-        //         start: '-700',
-        //         ease: 'sine.in',
-        //         end: '-300',
-        //     }
-        // })
-
-        // // const vh = (coef) => window.innerHeight * (coef/100);
-        // const vw = (coef) => window.innerWidth * (coef/100);
-
-        // boxV2.fromTo('.h1-scale',{opacity: 0, scaleX: 1, x:vw(-10)},{opacity:1,scaleX: 1,x:0,stagger:1.2})
-        // boxV2.fromTo('.title-container',{opacity: 0, scaleX: 1, x:vw(-5)},{opacity:1,scaleX: 1,x:0,stagger:1.2},"<")
-        // boxV2.fromTo('.h1-nonscale',{opacity: -5,scaleX: 3, x:vw(-5)},{opacity:1,x:0,scaleX: 1,stagger:1.2},"<")
-
-
-
-        // let boxContentTl = gsap.timeline({
-        //     scrollTrigger:{
-        //         trigger: '.box-content',
-        //         scrub: 1,
-        //         start: '-500',
-        //         ease: 'sine.in',
-        //         end: '-300'
-        //     },
-        // })
-
-        // boxContentTl.from('.box-content', {duration: 1, opacity: 0 , x:-50,stagger:1.2}, "<")
-
-
-
-
-
-        var htmlLevel = "90%"
-        var cssLevel = "70%"
-        var javascriptLevel = "55%"
-        var vueJSLevel = "50%"
-        var typescriptLevel = "65%"
-        var tailwindLevel = "35%"
-
-        let percbar = gsap.timeline({
-            scrollTrigger: {
-                trigger: '.item',
-                scrub: 1,
-                start: '-600',
-                end: '-500',
-                ease: 'sine.in'
-            },
-        })
-
-
-        percbar.fromTo('#htmlbar', { duration: 1, width: 0 }, { width: htmlLevel })
-        percbar.fromTo('#cssbar', { duration: 1, width: 0 }, { width: cssLevel })
-        percbar.fromTo('#javascriptbar', { duration: 1, width: 0 }, { width: javascriptLevel })
-        percbar.fromTo('#vuejsbar', { duration: 1, width: 0 }, { width: vueJSLevel })
-        percbar.fromTo('#typescriptbar', { duration: 1, width: 0 }, { width: typescriptLevel })
-        percbar.fromTo('#tailwindbar', { duration: 1, width: 0 }, { width: tailwindLevel })
-
-
-
-    </script>
-    <script>
-
-        let tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: '#scrollable-intro-background',
-                scrub: 1,
-                pin: true,
-                end: "bottom bottom"
-            },
-
-        })
-
-        const motionMatchMedia = window.matchMedia("(prefers-reduced-motion)");
-
-        if (!motionMatchMedia.matches) {
-            tl.fromTo("#scrollable-intro-background", { duration: 5, x: 0, scaleX: 20, scaleY: 20, rotation: 180 }, { duration: 10, scaleX: 10, scaleY: 10, x: -500, y: 1500, rotation: 60 })
-            tl.fromTo("#scrollable-text", { duration: 3, x: -200, opacity: 0, autoAlpha: 0 }, { duration: 4, x: 0, opacity: 1 }, "<")
-            tl.fromTo("#introtext0", { duration: 1.5, opacity: 0, x: -100 }, { duration: 1, opacity: 1, x: 0 }, ">")
-            tl.fromTo("#introtext1", { duration: 1.5, opacity: 0, x: -100 }, { duration: 1, opacity: 1, x: 0 }, ">")
-            tl.fromTo("#introtext2", { duration: 1.5, opacity: 0, x: -100 }, { duration: 1, opacity: 1, x: 0 }, ">")
-            tl.fromTo("#introtext3", { duration: 1.5, opacity: 0, x: -100 }, { duration: 1, opacity: 1, x: 0 }, ">")
-            tl.fromTo("#introtext4", { duration: 1.5, opacity: 0, x: -100 }, { duration: 1, opacity: 1, x: 0 }, ">")
-            tl.fromTo("#scrollable-intro-background", { duration: 3, scaleX: 2, scaleY: 2 }, { duration: 1.5, x: 50, y: -800, rotation: 40 })
-            tl.to("#scrollable-text", { duration: 3, opacity: 0, autoAlpha: 0 },)
-            tl.to("#scrollable-intro-background", { duration: 1, opacity: 1 })
-        } else {
-            gsap.to("#scrollable-intro-background", { duration: 0, scaleX: 10, scaleY: 10, x: -500, y: 1500, rotation: 60 })
-            tl.to("#scrollable-text", { duration: 1.5, opacity: 0, autoAlpha: 0 }, "<")
-        }
-
-    </script>
-    <script>
-        let tlSkillsLine = gsap.timeline({
-            scrollTrigger: {
-                trigger: '.existing-line',
-                scrub: 0.3,
-                start: 'top center',
-                end: '+300'
-            },
-        })
-
-        tlSkillsLine.fromTo("#skills-line-animated", { height: "0%" }, { height: '100%' })
-    </script>
+    <script src="/dist/current/JS/gsapworking.js"></script>
 
 </body>
 

@@ -51,6 +51,8 @@
 
     --aboutmebackground: rgb(30,30,40);
 
+    --footerbackground: rgb(30,30,40);
+
 }
 
 
@@ -876,54 +878,7 @@ h1,h2,h3,h4,h5,h6,a,p{
     filter: blur(0px)
 }
 
-@keyframes inLeft{
-    0%{
-        transform: translateX(-100px);
-        opacity: 0;
-    }
-    100%{
-        transform: translateX(0px);
-        opacity: 1;
-    }
-}
 
-@keyframes inRight{
-    0%{
-        transform: translateX(100px);
-        opacity: 0;
-    }
-    100%{
-        transform: translateX(0px);
-        opacity: 1;
-    }
-}
-
-@keyframes inUp{
-    0%{
-        transform: translateY(100px);
-        opacity: 0;
-    }
-    100%{
-        transform: translateY(0px);
-        opacity: 1;
-    }
-}
-
-@supports (animation: 2s){
-    #left-svg-container{
-        animation: 2s inLeft ease-in-out;
-        animation-fill-mode: forwards;
-    }   
-    #center-blob{
-        animation: 2s inRight ease-in-out;
-        animation-fill-mode: forwards;
-    }
-    #intro-banner-content{
-        animation: 2s inUp ease-in-out;
-        animation-fill-mode: forwards;
-    }
-
-}
 
 #nav-mobile-button{
     position: absolute;
@@ -1190,13 +1145,22 @@ h1,h2,h3,h4,h5,h6,a,p{
 
 }
 
-
 #about-me .grad-text{
-    background: rgb(75,75,255);
-    background: linear-gradient(90deg, rgba(75,75,255,1) 0%, rgba(75,172,255,1) 100%);  
-    background-clip: text;
-    color: transparent;
+    color: rgb(75,75,255)
 }
+
+
+@supports (background-clip:text){
+    #about-me .grad-text{
+        background: rgb(75,75,255);
+        background: linear-gradient(90deg, rgba(75,75,255,1) 0%, rgba(75,172,255,1) 100%);  
+        background-clip: text;
+        color: transparent;
+    }
+}
+
+
+
 
 #about-me .title{
     font-size: clamp(40px,3vw, 50px)
@@ -1211,30 +1175,33 @@ h1,h2,h3,h4,h5,h6,a,p{
     width: 50%;
 }
 
-#about-me .contact-button{
+.contact-button{
     color: white;
-    padding: 20px;
+    padding: 10px;
+    padding-left: 20px;
     border: 1px solid white;
-    border-radius: 40px;
+    border-radius: 10px;
     font-size: clamp(18px,3vw,20px);
     padding-right: 3.5rem;
     position: relative;
     transition: 0.2s ease-in-out;
     transition-property: background,color;
+    display: inline-block;
+    margin-top: 1.8rem;
 }
 
-#about-me .contact-button:hover{
+.contact-button:hover{
     background: white;
     color: black;
 }
 
-#about-me .contact-button::after{
+.contact-button::after{
     content: url('/src/images/extlnk.svg');
     position: absolute;
     width: 20px;
     height: 20px;
-    top: 0.8rem;
-    right: 2.25rem;
+    top: 0.2rem;
+    right: 2rem;
     bottom: 0px;
     display: block;
     filter: invert(90%);
@@ -1242,6 +1209,132 @@ h1,h2,h3,h4,h5,h6,a,p{
     transition: 0.2s filter ease-in-out;
 }
 
-#about-me .contact-button:hover::after{
+.contact-button:hover::after{
     filter: invert(0%);
+}
+
+#about-me .contact-button{
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    margin-right: 15px;
+
+}
+
+
+.footer-svg-wave {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.footer-svg-wave svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+}
+
+.footer-svg-wave .shape-fill {
+    fill: rgb(30,30,30);
+    fill: var(--footerbackground);
+}
+
+#footer .footer-content{
+    min-height: 500px;
+    background: rgb(30,30,30);
+    background: var(--footerbackground);
+    padding-top: 50px;
+}
+
+#footer .footer-content .contact-button{
+    font-size: clamp(18px,3vw,20px);
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+#footer .footer-content .contact-button:first-of-type{
+    margin-top: 1.2rem
+}
+
+#footer .footer-content .flex-el{
+    width: 100%;
+}
+
+#footer .footer-content .flex-el:first-of-type{
+    width: 150%;
+}
+
+.footer-content .flex-el h1{
+    color: white;
+    font-size: clamp(28px,3vw,35px)
+}
+
+.footer-content .flex-el h3{
+    color: white;
+    font-size: clamp(21px,3vw,23px);
+    margin-top: 0.3rem
+}
+
+.footer-content .flex-el h3:first-of-type{
+    margin-top: 1rem;
+}
+
+#footer .inner{
+    width: calc(100% - 180px);
+    margin-left: 90px;
+    display: flex;
+    gap: 50px;
+    padding-bottom: 100px;
+
+}
+
+@media screen and (max-width:900px){
+    #footer .inner{
+        flex-direction: column;
+        width: calc(100% - 90px);
+        margin-left: 35px;
+    }
+    #footer .flex-el{
+        width: 100%;
+    }
+}
+
+
+#footer .grad-text{
+    color: rgb(75,75,255)
+}
+
+
+@supports (background-clip:text){
+    #footer .grad-text{
+        background: rgb(75,75,255);
+        background: linear-gradient(90deg, rgba(75,75,255,1) 0%, rgba(75,172,255,1) 100%);  
+        background-clip: text;
+        color: transparent;
+    }
+}
+
+#footer h3.li-before{
+    position: relative;
+}
+
+#footer h3.li-before{
+    padding-left: 3.5rem;
+}
+
+#footer h3.li-before::before{
+    content: ' ';
+    background: url(/src/images/libefore.svg);
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0.6rem;
+    left: 1.3rem;
+    transform: scaleX(1);
 }
