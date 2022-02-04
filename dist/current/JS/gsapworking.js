@@ -35,7 +35,7 @@
 
 
 var htmlLevel = "90%"
-var cssLevel = "70%"
+var cssLevel = "80%"
 var javascriptLevel = "55%"
 var vueJSLevel = "50%"
 var typescriptLevel = "65%"
@@ -70,23 +70,6 @@ let tl = gsap.timeline({
 
 })
 
-const motionMatchMedia = window.matchMedia("(prefers-reduced-motion)");
-
-if (!motionMatchMedia.matches) {
-    tl.fromTo("#scrollable-intro-background", { duration: 5, x: 0, scaleX: 20, scaleY: 20, rotation: 180 }, { duration: 10, scaleX: 10, scaleY: 10, x: -500, y: 1500, rotation: 60 })
-    tl.fromTo("#scrollable-text", { duration: 3, x: -200, opacity: 0, autoAlpha: 0 }, { duration: 4, x: 0, opacity: 1 }, "<")
-    tl.fromTo("#introtext0", { duration: 1.5, opacity: 0, x: -100 }, { duration: 1, opacity: 1, x: 0 }, ">")
-    tl.fromTo("#introtext1", { duration: 1.5, opacity: 0, x: -100 }, { duration: 1, opacity: 1, x: 0 }, ">")
-    tl.fromTo("#introtext2", { duration: 1.5, opacity: 0, x: -100 }, { duration: 1, opacity: 1, x: 0 }, ">")
-    tl.fromTo("#introtext3", { duration: 1.5, opacity: 0, x: -100 }, { duration: 1, opacity: 1, x: 0 }, ">")
-    tl.fromTo("#introtext4", { duration: 1.5, opacity: 0, x: -100 }, { duration: 1, opacity: 1, x: 0 }, ">")
-    tl.fromTo("#scrollable-intro-background", { duration: 3, scaleX: 2, scaleY: 2 }, { duration: 1.5, x: 50, y: -800, rotation: 40 })
-    tl.to("#scrollable-text", { duration: 3, opacity: 0, autoAlpha: 0 },)
-    tl.to("#scrollable-intro-background", { duration: 1, opacity: 1 })
-} else {
-    gsap.to("#scrollable-intro-background", { duration: 0, scaleX: 10, scaleY: 10, x: -500, y: 1500, rotation: 60 })
-    tl.to("#scrollable-text", { duration: 1.5, opacity: 0, autoAlpha: 0 }, "<")
-}
 
 let tlSkillsLine = gsap.timeline({
     scrollTrigger: {
