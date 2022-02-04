@@ -24,6 +24,7 @@
     <script src="https://unpkg.com/vue@next"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/kute.js@2.2.2/dist/kute.min.js"></script>
+    <!-- <script defer src="/dist/current/JS/skillsmovement.js"></script>-->
 
 </head>
 
@@ -31,9 +32,20 @@
     <div id="app" class="w-screen h-screen">
         <span id="topofpage"></span>
         <div id="mobile-nav" :class="{activeNav: mobileNavOpen}">
-            <h1>hi</h1>
+            <a href="#aboutme" @click="mobileNavOpen = false" class="mobile-nav-button">
+                About Me
+            </a>
+            <a href="#skills" @click="mobileNavOpen = false" class="mobile-nav-button">
+                Skills
+            </a>
+            <a href="#projects" @click="mobileNavOpen = false" class="mobile-nav-button">
+                Projects
+            </a>
+            <a href="#blog" @click="mobileNavOpen = false" class="mobile-nav-button">
+                Blog
+            </a>
         </div>
-        <div class="w-full flex p-6 sticky z-20" style="height: 70px" id="nav-menu">
+        <div :class="{navMenuOpen: mobileNavOpen}" class="w-full flex p-6 sticky z-20" style="height: 70px" id="nav-menu">
             <div id="nav-mobile-button" @click="mobileNavOpen = !mobileNavOpen">
             <div class="open-lines">
                 <div class="nav-mobile-line"></div>
@@ -41,7 +53,8 @@
                 <div class="nav-mobile-line"></div>
             </div>
             <div class="close-lines">
-
+                <div class="nav-mobile-line"></div>
+                <div class="nav-mobile-line"></div>
             </div>
         </div>
         <div id="nav-desktop-buttons">
@@ -252,7 +265,6 @@
                     </div>
                 </div>
             </div>
-            <script defer src="/dist/current/JS/skillsmovement.js"></script>
         </div>
         <span style="height: 100px" class="block" id="projects"></span>
         <div class="content-box">
