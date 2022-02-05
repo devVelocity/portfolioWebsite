@@ -198,6 +198,7 @@ h1,h2,h3,h4,h5,h6,a,p{
     justify-content: space-between;
     -webkit-box-shadow: 0px 4px 34px 13px rgba(0,0,0,0.42); 
     box-shadow: 0px 4px 34px 13px rgba(0,0,0,0.42);
+    width: 100vw;
     
 }
 
@@ -249,7 +250,7 @@ h1,h2,h3,h4,h5,h6,a,p{
 }
 
 .content-box{
-    width: calc(100% - 220px);
+    width: calc(100% - 180px);
     margin-left: 100px;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -257,8 +258,8 @@ h1,h2,h3,h4,h5,h6,a,p{
 
 @media screen and (max-width: 900px){
     .content-box{
-        width: calc(100% - 70px);
-        margin-left: 30px;
+        width: calc(100% - 50px);
+        margin-left: 25px;
         margin-top: 30px;
         margin-bottom: 30px;
     }
@@ -267,6 +268,12 @@ h1,h2,h3,h4,h5,h6,a,p{
 .road-box .box-side-1{
     width: 15%;
     position: relative;
+}
+
+@media screen and (max-width:900px){
+    .road-box .box-side-1{
+        width: 5%;
+    }
 }
 
 .road-box .box-side-2{
@@ -305,7 +312,7 @@ h1,h2,h3,h4,h5,h6,a,p{
 }
 
 .box-side-2-content:first-of-type{
-    margin-top: 40px;  
+    margin-top: 20px;  
 }
 
 
@@ -754,7 +761,17 @@ h1,h2,h3,h4,h5,h6,a,p{
     margin-top: 20px;
     margin-bottom: 20px;
     width: 49%;
+    min-width: 200px;
+    height: auto;
+    min-width: 200px;
 }
+
+@media screen and (max-width:1300px){
+    .box-content .content-image{
+        width: 100%
+    }
+}
+
 
 
 
@@ -1144,8 +1161,14 @@ h1,h2,h3,h4,h5,h6,a,p{
 }
 
 .blog-fill-inner .iframe-container{
-    margin-right: 30px;
+
 }
+
+/* @media screen and (max-width:900px){
+    .blog-fill-inner .iframe-container{
+        display: none;
+    }
+} */
 
 #about-me{
     background: rgb(40,40,40);
@@ -1341,15 +1364,20 @@ h1,h2,h3,h4,h5,h6,a,p{
     width: 150%;
 }
 
+
 .footer-content .flex-el h1{
     color: white;
-    font-size: clamp(28px,3vw,35px)
+    font-size: clamp(28px,3vw,35px);
+    display: inline-block;
+    width: 100%;
 }
 
 .footer-content .flex-el h3{
     color: white;
     font-size: clamp(21px,3vw,23px);
-    margin-top: 0.3rem
+    margin-top: 0.3rem;
+    display: inline-block;
+    width: auto;
 }
 
 .footer-content .flex-el h3:first-of-type{
@@ -1372,6 +1400,9 @@ h1,h2,h3,h4,h5,h6,a,p{
         margin-left: 35px;
     }
     #footer .flex-el{
+        width: 100%;
+    }
+    #footer .footer-content .flex-el:first-of-type{
         width: 100%;
     }
 }
