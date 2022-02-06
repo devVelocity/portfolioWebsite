@@ -999,7 +999,8 @@ h1,h2,h3,h4,h5,h6,a,p{
     left: -150%;
     z-index: 5;
     pointer-events: none;
-    transition: 0.5s left ease-in-out;
+    /* transition: 0.5s left ease-in-out; */
+    transition: none;
     padding-top: 40px;
     padding-left: 5%;
     padding-right: 5%;
