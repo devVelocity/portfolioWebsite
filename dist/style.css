@@ -53,6 +53,17 @@
 
     --footerbackground: rgb(30,30,40);
 
+    --bottombarbackground: rgb(15,15,20);
+    --bottombartext: rgb(255,255,255);
+    --bottombarbuttontext: rgb(255,255,255);
+    --bottombarbuttontexthover: rgb(0,0,0);
+    --bottombarbuttonbackground: transparent;
+    --bottombarbuttonhover: transparent;
+
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 
@@ -60,7 +71,7 @@
 body{
     overflow-x: hidden;
     background: rgb(0,0,0);
-    background: var(--pageCol)
+    background: var(--pageCol);
 }
 
 h1,h2,h3,h4,h5,h6,a,p{
@@ -1167,7 +1178,7 @@ h1,h2,h3,h4,h5,h6,a,p{
 }
 
 .blog-fill-inner iframe{
-    width: 100%;
+    width: calc(100% - 20px); 
     border-radius: 10px;
     height: 500px;
 }
@@ -1452,4 +1463,67 @@ h1,h2,h3,h4,h5,h6,a,p{
     top: 0.6rem;
     left: 1.3rem;
     transform: scaleX(1);
+}
+
+.bottom-bar{
+    background: rgb(15,15,20);
+    background: var(--bottombarbackground);
+    min-height: 70px;
+    width: 100vw;
+    position: relative;
+    bottom: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+@media screen and (max-width: 500px){
+    .bottom-bar{
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .bottom-bar h1{
+        width: 100%
+    }
+    .bottom-bar .regular-button{
+        width: 100%;
+    }
+}
+
+.bottom-bar h1{
+    color: rgb(255,255,255);
+}
+
+.regular-button{
+    color: white;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+    font-size: clamp(18px,3vw,20px);
+    position: relative;
+    transition: 0.2s ease-in-out;
+    transition-property: background,color;
+    display: inline-block;
+}
+
+.regular-button:hover{
+    background: white;
+    color: black;
+}
+
+
+.bottom-bar .regular-button{
+    background;: var(--bottombarbuttonbackground);
+    color: var(--bottombarbuttontext);
+
+}
+
+.bottom-bar .regular-button:hover{
+    background;: var(--bottombarbuttonhover);
+    color: var(--bottombarbuttontexthover);
+
 }
