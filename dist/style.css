@@ -67,7 +67,7 @@ html{
 }
 
 
-=
+
 body{
     overflow-x: hidden;
     background: rgb(0,0,0);
@@ -1178,7 +1178,7 @@ h1,h2,h3,h4,h5,h6,a,p{
 }
 
 .blog-fill-inner iframe{
-    width: 100%;
+    width: calc(100% - 20px); 
     border-radius: 10px;
     height: 500px;
 }
@@ -1481,6 +1481,19 @@ h1,h2,h3,h4,h5,h6,a,p{
     padding-bottom: 20px;
 }
 
+@media screen and (max-width: 500px){
+    .bottom-bar{
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .bottom-bar h1{
+        width: 100%
+    }
+    .bottom-bar .regular-button{
+        width: 100%;
+    }
+}
+
 .bottom-bar h1{
     color: rgb(255,255,255);
 }
@@ -1514,10 +1527,3 @@ h1,h2,h3,h4,h5,h6,a,p{
     color: var(--bottombarbuttontexthover);
 
 }
-
---bottombarbackground: rgb(15,15,20);
---bottombartext: rgb(255,255,255);
---bottombarbuttontext: rgb(255,255,255);
---bottombarbuttontexthover: rgb(0,0,0);
---bottombarbuttonbackground: transparent;
---bottombarbuttonhover: transparent;
