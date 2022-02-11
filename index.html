@@ -25,7 +25,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/kute.js@2.2.2/dist/kute.min.js"></script>
     <!-- <script defer src="/dist/current/JS/skillsmovement.js"></script>-->
-
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 </head>
 
 <body class="">
@@ -358,6 +359,9 @@
                                     <div class="current-project-image-container">
                                         <img v-for="image in item.images" v-bind:src="image" alt="" class="content-image">
                                     </div>
+                                    <!-- <div class="projectcarousel">
+                                        <div v-for="image in item.images" class="carousel-cell"><img v-bind:src="image" alt="" class="content-image"></div>
+                                    </div> -->
                                     <div class="text-content">
                                         <h1 class="text-lg font-bold" style="font-size: 24px">Description</h1>
                                         <h2>{{item.description}}</h2>
