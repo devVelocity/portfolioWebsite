@@ -42,7 +42,7 @@ class Header extends HTMLElement {
     connectedCallback(){
       this.innerHTML = `
         <div id="devConsole" class="w-screen h-screen z-30 fixed top-0 bg-opacity-60 bg-black flex justify-center items-center">
-        <div class="bg-zinc-700 rounded-lg p-4 flex items-center flex-col">
+        <div class="bg-zinc-700 rounded-lg p-4 flex items-center flex-col" style="max-width: 500px; margin-left: 20px; margin-right: 40px">
             <h1 class="text-center text-xl font-bold p-2 text-white">Dev Console</h1>
             <h3 class="text-center text-white">Congrats! You found the (Work In Progress) Dev Console. While the Dev Console has yet to developed, heres a video you can watch in the meantime</h3>
             <span class="h-2 block" style="height: 15px"></span>
