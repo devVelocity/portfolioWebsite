@@ -370,6 +370,14 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div v-if="item.LinkToProject" style="margin-top:50px; margin-bottom: 50px">
+                                            <h1 class="text-lg font-bold" style="font-size: 24px">Project Links</h1>
+                                            <div v-if="item.LinkToProject.length != 0" v-for="links in item.LinkToProject">
+                                                <a :href="links.link" class="contact-button-lb">
+                                                    {{links.buttonTXT}}
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -443,6 +451,14 @@
                                                 <div v-for="todos in item.ToDoList">
                                                     <h2 :class="{projectToDoUnfinished: !todos.completed}" :class="{projectToDoFinished: todos.completed}">{{todos.content}}</h2>
                                                 </div>
+                                            </div>
+                                        </div>
+                                        <div v-if="item.LinkToProject" style="margin-top:50px; margin-bottom: 50px">
+                                            <h1 class="text-lg font-bold" style="font-size: 24px">Project Links</h1>
+                                            <div v-if="item.LinkToProject.length != 0" v-for="links in item.LinkToProject">
+                                                <a :href="links.link" class="contact-button-lb">
+                                                    {{links.buttonTXT}}
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -521,6 +537,14 @@
                                                     <h2 :class="{projectToDoUnfinished: !todos.completed}" :class="{projectToDoFinished: todos.completed}">{{todos.content}}</h2>
                                                 </div>
                                             </div>
+                                            <div v-if="item.LinkToProject" style="margin-top:50px; margin-bottom: 50px">
+                                                <h1 class="text-lg font-bold" style="font-size: 24px">Project Links</h1>
+                                                <div v-if="item.LinkToProject.length != 0" v-for="links in item.LinkToProject">
+                                                    <a :href="links.link" class="contact-button-lb">
+                                                        {{links.buttonTXT}}
+                                                    </a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                             </div>
@@ -597,6 +621,15 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div v-if="item.LinkToProject" style="margin-top:50px; margin-bottom: 50px">
+                                        <h1 class="text-lg font-bold" style="font-size: 24px">Project Links</h1>
+                                        <div v-if="item.LinkToProject.length != 0" v-for="links in item.LinkToProject">
+                                            <a :href="links.link" class="contact-button-lb">
+                                                {{links.buttonTXT}}
+                                            </a>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
