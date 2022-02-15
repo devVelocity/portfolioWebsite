@@ -371,13 +371,13 @@
                                                             <div class="side-line-line"></div>
                                                         </div>
                                                         <div v-for="todos in item.ToDoList">
-                                                            <h3 :class="{projectToDoUnfinished: !todos.completed}" :class="{projectToDoFinished: todos.completed}"><span class="todo-box"></span>{{todos.content}}</h3>
+                                                            <h3 :class="{projectToDoUnfinished: !todos.completed}" :class="{projectToDoFinished: todos.completed}"><span class="todo-box" v-if="!todos.completed"></span><span class="todo-box todo-completed" v-if="todos.completed"></span>{{todos.content}}</h3>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div v-if="item.LinkToProject" style="margin-top:50px; margin-bottom: 50px">
+                                        <div v-if="item.LinkToProject && item.LinkToProject.length != 0" style="margin-top:50px; margin-bottom: 50px">
                                             <h1 class="text-lg font-bold" style="font-size: 24px">Project Links</h1>
                                             <div v-if="item.LinkToProject.length != 0" v-for="links in item.LinkToProject">
                                                 <a :href="links.link" class="contact-button-lb">
@@ -462,13 +462,13 @@
                                                             <div class="side-line-line"></div>
                                                         </div>
                                                         <div v-for="todos in item.ToDoList">
-                                                            <h3 :class="{projectToDoUnfinished: !todos.completed}" :class="{projectToDoFinished: todos.completed}"><span class="todo-box"></span>{{todos.content}}</h3>
+                                                            <h3 :class="{projectToDoUnfinished: !todos.completed}" :class="{projectToDoFinished: todos.completed}"><span class="todo-box" v-if="!todos.completed"></span><span class="todo-box todo-completed" v-if="todos.completed"></span>{{todos.content}}</h3>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div v-if="item.LinkToProject" style="margin-top:50px; margin-bottom: 50px">
+                                        <div v-if="item.LinkToProject && item.LinkToProject.length != 0" style="margin-top:50px; margin-bottom: 50px">
                                             <h1 class="text-lg font-bold" style="font-size: 24px">Project Links</h1>
                                             <div v-if="item.LinkToProject.length != 0" v-for="links in item.LinkToProject">
                                                 <a :href="links.link" class="contact-button-lb">
@@ -554,13 +554,13 @@
                                                             <div class="side-line-line"></div>
                                                         </div>
                                                         <div v-for="todos in item.ToDoList">
-                                                            <h3 :class="{projectToDoUnfinished: !todos.completed}" :class="{projectToDoFinished: todos.completed}"><span class="todo-box"></span>{{todos.content}}</h3>
+                                                            <h3 :class="{projectToDoUnfinished: !todos.completed}" :class="{projectToDoFinished: todos.completed}"><span class="todo-box" v-if="!todos.completed"></span><span class="todo-box todo-completed" v-if="todos.completed"></span>{{todos.content}}</h3>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div v-if="item.LinkToProject" style="margin-top:50px; margin-bottom: 50px">
+                                        <div v-if="item.LinkToProject && item.LinkToProject.length != 0" style="margin-top:50px; margin-bottom: 50px">
                                             <h1 class="text-lg font-bold" style="font-size: 24px">Project Links</h1>
                                             <div v-if="item.LinkToProject.length != 0" v-for="links in item.LinkToProject">
                                                 <a :href="links.link" class="contact-button-lb">
@@ -645,13 +645,13 @@
                                                         <div class="side-line-line"></div>
                                                     </div>
                                                     <div v-for="todos in item.ToDoList">
-                                                        <h3 :class="{projectToDoUnfinished: !todos.completed}" :class="{projectToDoFinished: todos.completed}"><span class="todo-box"></span>{{todos.content}}</h3>
+                                                        <h3 :class="{projectToDoUnfinished: !todos.completed}" :class="{projectToDoFinished: todos.completed}"><span class="todo-box" v-if="!todos.completed"></span><span class="todo-box todo-completed" v-if="todos.completed"></span>{{todos.content}}</h3>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div v-if="item.LinkToProject" style="margin-top:50px; margin-bottom: 50px">
+                                    <div v-if="item.LinkToProject && item.LinkToProject.length != 0" style="margin-top:50px; margin-bottom: 50px">
                                         <h1 class="text-lg font-bold" style="font-size: 24px">Project Links</h1>
                                         <div v-if="item.LinkToProject.length != 0" v-for="links in item.LinkToProject">
                                             <a :href="links.link" class="contact-button-lb">
