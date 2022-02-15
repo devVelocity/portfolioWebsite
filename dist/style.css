@@ -1330,6 +1330,27 @@ h1,h2,h3,h4,h5,h6,a,p{
     width: 50%;
 }
 
+#about-me h3.li-before{
+    position: relative;
+}
+
+#about-me h3.li-before{
+    padding-left: 3.5rem;
+    padding-bottom: 0.3rem;
+}
+
+#about-me h3.li-before::before{
+    content: ' ';
+    background: url(/src/images/libefore.svg);
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0.4rem;
+    left: 1.3rem;
+    transform: scaleX(1);
+}
+
 .contact-button{
     color: white;
     padding: 10px;
