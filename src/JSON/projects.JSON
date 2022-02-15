@@ -19,5 +19,13 @@
     "elementsused":[{"logo":"/src/images/vue.png","name":"VueJS"},{"logo":"/src/images/CSS3_logo_and_wordmark.svg.png","name":"CSS"},{"logo":"/src/images/json.png","name":"JSON"},{"logo":"","name":"GSAP"}],
     "currentProject":false,
     "dropdownOpen": false
-}
+    },
+    {
+    "title":"To-Do-List/KanBanBoard",
+    "images":[],
+    "description":"",
+    "elementsused":[],
+    "currentProject": true,
+    "ToDoList":[{"content":"rawr","completed":false}]
+    }
 ]

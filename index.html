@@ -268,7 +268,7 @@
             </div>
         </div>
         <span style="height: 100px" class="block" id="projects"></span>
-        <div class="content-box">
+        <div class="content-box" id="projects-box">
             <h3 class="text-xl">Portfolio</h3>
             <h1 class="font-bold" style="font-size: 48px">My Projects</h1>
             <span style="height: 50px" class="block"></span>
@@ -448,9 +448,10 @@
 
                                     </div>
 
-                                    <div class="text-content">
-                                        <h1 class="text-lg font-bold" style="font-size: 24px">Description</h1>
-                                        <h2>{{item.description}}</h2>
+                                    <h1 class="text-lg font-bold" style="font-size: 24px">Description</h1>
+                                    <h2>{{item.description}}</h2>
+
+                                    <div class="text-content" v-if="item.currentProject == False">
                                         <h1 class="text-lg font-bold" style="font-size: 24px">Achivements</h1>
                                         <h2>{{item.achievements}}</h2>
                                         <h1 class="text-lg font-bold" style="font-size: 24px">Future Improvements</h1>
@@ -465,6 +466,10 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="text-content" v-if="item.currentProject == True">
+
+                                    </div>
+
                                 </div>
                             </div>
                         </div>

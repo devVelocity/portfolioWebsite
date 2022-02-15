@@ -285,6 +285,12 @@ h1,h2,h3,h4,h5,h6,a,p{
         margin-top: 30px;
         margin-bottom: 30px;
     }
+    #projects-box{
+        width: calc(100% - 180px);
+        margin-left: 100px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
 }
 
 .road-box .box-side-1{
@@ -423,7 +429,7 @@ h1,h2,h3,h4,h5,h6,a,p{
     height: auto;
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 700px){
     .title-container .h1-scale{
         opacity: 0;
     }
@@ -442,6 +448,12 @@ h1,h2,h3,h4,h5,h6,a,p{
     }
     .title-container .h1-shadow{
         opacity: 0
+    }
+    #projects-box{
+        width: calc(100% - 50px);
+        margin-left: 25px;
+        margin-top: 30px;
+        margin-bottom: 30px;
     }
 }
 
