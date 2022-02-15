@@ -23,10 +23,15 @@
     --itemtext: rgb(20,20,20);
     --itemborderradius: 40px;
 
-    --buttonBackground: rgb(30,30,30);
-    --buttonColour: rgb(255,255,255);
+    --buttonBackground: rgb(190,190,190);
+    --buttonColour: rgb(50,50,50);
     --buttonHoverBackground: rgb(75,75,255);
     --buttonHoverColour: rgb(255,255,255);
+
+    --contactbuttonlbbackground: rgba(0,0,0,0);
+    --contactbuttonlbtext: rgb(30,30,30);
+    --contactbuttonlbhoverbackground: rgb(30,30,30);
+    --contactbuttonlbtexthover: rgb(255,255,255);
 
     --titlecontainertext: rgb(255,255,255);
     --titlecontainerbackground: rgb(50,50,50);
@@ -59,6 +64,10 @@
     --bottombarbuttontexthover: rgb(0,0,0);
     --bottombarbuttonbackground: transparent;
     --bottombarbuttonhover: transparent;
+
+    --todouncomplete: rgb(150,150,150);
+    --todocomplete: rgb(44, 173, 85);
+    --todocompletetext: rgb(255,255,255);
 
 }
 
@@ -285,6 +294,12 @@ h1,h2,h3,h4,h5,h6,a,p{
         margin-top: 30px;
         margin-bottom: 30px;
     }
+    #projects-box{
+        width: calc(100% - 180px);
+        margin-left: 100px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
 }
 
 .road-box .box-side-1{
@@ -375,9 +390,10 @@ h1,h2,h3,h4,h5,h6,a,p{
     margin-bottom: 15px;
     transition: 0.1s ease-in-out;
     transition-property: background,color;
-    width: 20%;
+    width: 50%;
     min-width: 100px;
     text-align: center;
+    max-width: 300px;
     
 }
 
@@ -423,7 +439,7 @@ h1,h2,h3,h4,h5,h6,a,p{
     height: auto;
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 700px){
     .title-container .h1-scale{
         opacity: 0;
     }
@@ -442,6 +458,12 @@ h1,h2,h3,h4,h5,h6,a,p{
     }
     .title-container .h1-shadow{
         opacity: 0
+    }
+    #projects-box{
+        width: calc(100% - 50px);
+        margin-left: 25px;
+        margin-top: 30px;
+        margin-bottom: 30px;
     }
 }
 
@@ -472,6 +494,21 @@ h1,h2,h3,h4,h5,h6,a,p{
     color: white;
     color: var(--filterradioselectedcolour);
     text-shadow: 1px 3px rgba(50,50,50,0.71); 
+    display: inline-block;
+    width: auto;
+    font-size: clamp(12px,3vw,15px);
+    transform: translateY(-5px);
+    margin-left: 20px;
+    padding-right: 10px;
+    padding-left: 10px; 
+}
+
+@media screen and (max-width:600px){
+    .current-project{
+        width: calc(100% - 20px);
+        margin-left: 0px;
+        margin-top: 20px;
+    }
 }
 
 .content-box .filter-criteria-container{
@@ -720,11 +757,11 @@ h1,h2,h3,h4,h5,h6,a,p{
     transition: 0.3s opacity ease-in-out
 }
 
-.box-content .text-content h1{
+.box-content h1{
     margin-bottom: 25px;
 }
 
-.box-content .text-content h2{
+.box-content h2{
     margin-bottom: 50px;
 }
 
@@ -1331,6 +1368,48 @@ h1,h2,h3,h4,h5,h6,a,p{
     filter: invert(0%);
 }
 
+.contact-button-lb{
+    color: rgb(30,30,30);
+    color: var(--contactbuttonlbtext);
+    padding: 10px;
+    padding-left: 20px;
+    border: 1px solid rgb(30,30,30);
+    border: 1px solid var(--contactbuttonlbtext);
+    border-radius: 10px;
+    font-size: clamp(18px,3vw,20px);
+    padding-right: 3.5rem;
+    position: relative;
+    transition: 0.2s ease-in-out;
+    transition-property: background,color;
+    display: inline-block;
+    margin-top: 1.8rem;
+}
+
+.contact-button-lb:hover{
+    background: rgb(30,30,30);
+    background: var(--contactbuttonlbhoverbackground);
+    color: rgb(255,255,255);
+    color: var(--contactbuttonlbtexthover);
+}
+
+.contact-button-lb::after{
+    content: url('/src/images/extlnk.svg');
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 0.2rem;
+    right: 2rem;
+    bottom: 0px;
+    display: block;
+    filter: invert(20%);
+    transform: scale(0.1);
+    transition: 0.2s filter ease-in-out;
+}
+
+.contact-button-lb:hover::after{
+    filter: invert(100%);
+}
+
 #about-me .contact-button{
     margin-left: 0px;
     margin-top: 0px;
@@ -1517,13 +1596,64 @@ h1,h2,h3,h4,h5,h6,a,p{
 
 
 .bottom-bar .regular-button{
-    background;: var(--bottombarbuttonbackground);
+    background: var(--bottombarbuttonbackground);
     color: var(--bottombarbuttontext);
 
 }
 
 .bottom-bar .regular-button:hover{
-    background;: var(--bottombarbuttonhover);
+    background: var(--bottombarbuttonhover);
     color: var(--bottombarbuttontexthover);
+}
 
+.project-do-list-flexcontainer h2{
+    margin-bottom: 0px;
+}
+
+.project-do-list-flexcontainer{
+    display: flex;
+    gap: 10px;
+}
+
+.project-do-list-flexcontainer .side-line{
+    width: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-do-list-flexcontainer .side-line .side-line-line{
+    height: 100%;
+    width: 3px;
+    background: rgb(200,200,200);
+    background: var(--projectLineExisting)
+}
+
+.todo-box{
+    border: 1px solid rgb(150,150,150);
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    display: inline-block;
+    border-radius: 5px;
+    transform: translateY(5px);
+}
+
+.todo-box.todo-completed{
+    border: 1px solid rgb(44, 173, 85);
+    border: 1px solid var(--todocomplete);
+    background: rgb(44, 173, 85);
+    background: var(--todocomplete);
+    color: white;
+    color: var(--todocompletetext);
+    padding: 5px;
+    position: relative;
+}
+
+.todo-box.todo-completed::after{
+    content: '✓';
+    color: white;
+    color: var(--todocompletetext);
+    position: absolute;
+    transform: scale(0.8) translate(-2px,-10px);
 }
