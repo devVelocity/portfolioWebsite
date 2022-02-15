@@ -282,7 +282,7 @@
                 <h3 class="filter-radio" style="font-size: 20px" v-bind:class="{active: !currentFilter2}"
                     @click="changeFilter2(false)">All</h3>
                 <h3 class="filter-radio" style="font-size: 20px" v-bind:class="{active: currentFilter2}"
-                    @click="changeFilter2(true)">Current/WIP Projects</h3>
+                    @click="changeFilter2(true)">WIP Projects</h3>
             </div>
 
             <span style="height: 100px" class="block"></span>
@@ -300,7 +300,11 @@
                                     <div class="h1-shadow" style="background: #071429"></div>
                                     <h1 class="h1-scale" class="text-3xl font-bold p-2" style="background: #071429">
                                     </h1>
-                                    <h1 class="h1-nonscale font-bold vueimg">{{item.title}}</h1>
+                                    <h1 class="h1-nonscale font-bold vueimg">{{item.title}}
+                                        <span class="current-project" v-if="item.currentProject == true">
+                                            WIP
+                                        </span>
+                                    </h1>
                                 </div>
                             </div>
                             <div class="box-content"  v-if="element.name == currentFilter">
@@ -310,24 +314,60 @@
                                     class="showToggle">Hide</button>
                                 <div v-if="item.dropdownOpen">
                                     <!-- <span style="height: 10px" class="block"></span> -->
-                                    <h1 class="current-project font-bold">Current Project</h1>
+                                    <h1 class="current-project font-bold">WIP</h1>
                                     <span style="height: 30px" class="block"></span>
                                     <div class="current-project-image-container">
                                         <img v-for="image in item.images" v-bind:src="image" alt="" class="content-image">
                                     </div>
-                                    <div class="text-content">
-                                        <h1 class="text-lg font-bold" style="font-size: 24px">Description</h1>
-                                        <h2>{{item.description}}</h2>
-                                        <h1 class="text-lg font-bold" style="font-size: 24px">Achivements</h1>
-                                        <h2>{{item.achievements}}</h2>
-                                        <h1 class="text-lg font-bold" style="font-size: 24px">Future Improvements</h1>
-                                        <h2>{{item.improvements}}</h2>
-                                        <h1 class="text-lg font-bold" style="font-size: 24px">Project created with</h1>
-                                        <div class="created-with-container">
-                                            <div class="created-with-box" v-for="el in item.elementsused">
-                                                <img v-if="el.logo != ''" v-bind:src="el.logo">
-                                                <!-- <div v-if="el.logo == ''" style="width: 30px; height: 30px; margin-right: 15px"></div> -->
-                                                <h3 class="font-bold">{{el.name}}</h3>
+                                    <div v-if="item.dropdownOpen">
+                                        <!-- <span style="height: 10px" class="block"></span> -->
+                                        <div class="current-project-image-container" v-if="item.images.length != 0">
+                                            <img v-for="image in item.images" v-bind:src="image" alt="" class="content-image">
+    
+                                        </div>
+    
+                                        <span style="height: 10px" class="block"></span>
+                                        <div v-if="item.description != ''">
+                                            <h1 class="text-lg font-bold" style="font-size: 24px; margin-bottom: 25px">Description</h1>
+                                            <h2 style="margin-bottom:50px">{{item.description}}</h2>
+                                        </div>
+    
+    
+                                        <div class="text-content" v-if="item.currentProject == false">
+                                            <h1 class="text-lg font-bold" style="font-size: 24px">Achivements</h1>
+                                            <h2>{{item.achievements}}</h2>
+                                            <h1 class="text-lg font-bold" style="font-size: 24px">Future Improvements</h1>
+                                            <h2>{{item.improvements}}</h2>
+                                            <h1 class="text-lg font-bold" style="font-size: 24px">Project created with</h1>
+                                            <div class="created-with-container">
+                                                <div class="created-with-box" v-for="el in item.elementsused">
+                                                    <img v-if="el.logo != ''" v-bind:src="el.logo">
+                                                    <!-- <div v-if="el.logo == ''"
+                                                        style="width: 30px; height: 30px; margin-right: 15px"></div> -->
+                                                    <h3 class="font-bold">{{el.name}}</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="text-content" v-if="item.currentProject == true">
+                                            <span style="height: 10px" class="block"></span>
+                                            <div v-if="item.elementsused.length != 0">
+                                                <h1 class="text-lg font-bold" style="font-size: 24px">Project created with</h1>
+                                                <div class="created-with-container">
+                                                    <div class="created-with-box" v-for="el in item.elementsused">
+                                                        <img v-if="el.logo != ''" v-bind:src="el.logo">
+                                                        <!-- <div v-if="el.logo == ''"
+                                                            style="width: 30px; height: 30px; margin-right: 15px"></div> -->
+                                                        <h3 class="font-bold">{{el.name}}</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div v-if="item.ToDoList.length != 0">
+                                                <h1 class="text-lg font-bold" style="font-size: 24px">To Do List</h1>
+                                                <h2 style="margin-bottom: 20px">Items in list: <span class="font-bold">{{item.ToDoList.length}}</span></h2>
+                                                <span style="height: 10px" class="block"></span>
+                                                <div v-for="todos in item.ToDoList">
+                                                    <h2 :class="{projectToDoUnfinished: !todos.completed}" :class="{projectToDoFinished: todos.completed}">{{todos.content}}</h2>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -342,7 +382,11 @@
                                 <div class="title-container">
                                     <div class="h1-shadow"></div>
                                     <h1 class="h1-scale" class="text-3xl font-bold p-2"></h1>
-                                    <h1 class="h1-nonscale font-bold vueimg">{{item.title}}</h1>
+                                    <h1 class="h1-nonscale font-bold vueimg">{{item.title}}
+                                        <span class="current-project" v-if="item.currentProject == true">
+                                            WIP
+                                        </span>
+                                    </h1>
                                 </div>
                             </div>
                             <div class="box-content" v-if="element.name == currentFilter">
@@ -350,31 +394,58 @@
                                     class="showToggle">Show</button>
                                 <button @click="item.dropdownOpen = !item.dropdownOpen" v-if="item.dropdownOpen"
                                     class="showToggle">Hide</button>
-                                <div v-if="item.dropdownOpen">
-                                    <!-- <span style="height: 10px" class="block"></span> -->
-                                    <h1 class="current-project font-bold" v-if="item.currentProject == true">Current
-                                        Project</h1>
-                                    <span style="height: 30px" class="block" v-if="item.currentProject == true"></span>
-                                    <div class="current-project-image-container">
-                                        <img v-for="image in item.images" v-bind:src="image" alt="" class="content-image">
-                                    </div>
-                                    <div class="text-content">
-                                        <h1 class="text-lg font-bold" style="font-size: 24px">Description</h1>
-                                        <h2>{{item.description}}</h2>
-                                        <h1 class="text-lg font-bold" style="font-size: 24px">Achivements</h1>
-                                        <h2>{{item.achievements}}</h2>
-                                        <h1 class="text-lg font-bold" style="font-size: 24px">Future Improvements</h1>
-                                        <h2>{{item.improvements}}</h2>
-                                        <h1 class="text-lg font-bold" style="font-size: 24px">Project created with</h1>
-                                        <div class="created-with-container">
-                                            <div class="created-with-box" v-for="el in item.elementsused">
-                                                <img v-if="el.logo != ''" v-bind:src="el.logo">
-                                                <!-- <div v-if="el.logo == ''" style="width: 30px; height: 30px; margin-right: 15px"></div> -->
-                                                <h3 class="font-bold">{{el.name}}</h3>
+                                    <div v-if="item.dropdownOpen">
+                                        <!-- <span style="height: 10px" class="block"></span> -->
+                                        <div class="current-project-image-container" v-if="item.images.length != 0">
+                                            <img v-for="image in item.images" v-bind:src="image" alt="" class="content-image">
+    
+                                        </div>
+    
+                                        <span style="height: 10px" class="block"></span>
+                                        <div v-if="item.description != ''">
+                                            <h1 class="text-lg font-bold" style="font-size: 24px; margin-bottom: 25px">Description</h1>
+                                            <h2 style="margin-bottom:50px">{{item.description}}</h2>
+                                        </div>
+    
+    
+                                        <div class="text-content" v-if="item.currentProject == false">
+                                            <h1 class="text-lg font-bold" style="font-size: 24px">Achivements</h1>
+                                            <h2>{{item.achievements}}</h2>
+                                            <h1 class="text-lg font-bold" style="font-size: 24px">Future Improvements</h1>
+                                            <h2>{{item.improvements}}</h2>
+                                            <h1 class="text-lg font-bold" style="font-size: 24px">Project created with</h1>
+                                            <div class="created-with-container">
+                                                <div class="created-with-box" v-for="el in item.elementsused">
+                                                    <img v-if="el.logo != ''" v-bind:src="el.logo">
+                                                    <!-- <div v-if="el.logo == ''"
+                                                        style="width: 30px; height: 30px; margin-right: 15px"></div> -->
+                                                    <h3 class="font-bold">{{el.name}}</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="text-content" v-if="item.currentProject == true">
+                                            <span style="height: 10px" class="block"></span>
+                                            <div v-if="item.elementsused.length != 0">
+                                                <h1 class="text-lg font-bold" style="font-size: 24px">Project created with</h1>
+                                                <div class="created-with-container">
+                                                    <div class="created-with-box" v-for="el in item.elementsused">
+                                                        <img v-if="el.logo != ''" v-bind:src="el.logo">
+                                                        <!-- <div v-if="el.logo == ''"
+                                                            style="width: 30px; height: 30px; margin-right: 15px"></div> -->
+                                                        <h3 class="font-bold">{{el.name}}</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div v-if="item.ToDoList.length != 0">
+                                                <h1 class="text-lg font-bold" style="font-size: 24px">To Do List</h1>
+                                                <h2 style="margin-bottom: 20px">Items in list: <span class="font-bold">{{item.ToDoList.length}}</span></h2>
+                                                <span style="height: 10px" class="block"></span>
+                                                <div v-for="todos in item.ToDoList">
+                                                    <h2 :class="{projectToDoUnfinished: !todos.completed}" :class="{projectToDoFinished: todos.completed}">{{todos.content}}</h2>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -387,7 +458,11 @@
                                 <div class="title-container">
                                     <div class="h1-shadow"></div>
                                     <h1 class="h1-scale" class="text-3xl font-bold p-2"></h1>
-                                    <h1 class="h1-nonscale font-bold vueimg">{{item.title}}</h1>
+                                    <h1 class="h1-nonscale font-bold vueimg">{{item.title}}
+                                        <span class="current-project" v-if="item.currentProject == true">
+                                            WIP
+                                        </span>
+                                    </h1>
                                 </div>
                             </div>
                             <div class="box-content" v-if="item.currentProject == true">
@@ -395,30 +470,59 @@
                                     class="showToggle">Show</button>
                                 <button @click="item.dropdownOpen = !item.dropdownOpen" v-if="item.dropdownOpen"
                                     class="showToggle">Hide</button>
-                                <div v-if="item.dropdownOpen">
-                                    <!-- <span style="height: 10px" class="block"></span> -->
-                                    <h1 class="current-project font-bold">Current Project</h1>
-                                    <span style="height: 30px" class="block"></span>
-                                    <div class="current-project-image-container">
-                                        <img v-for="image in item.images" v-bind:src="image" alt="" class="content-image">
-                                    </div>
-                                    <div class="text-content">
-                                        <h1 class="text-lg font-bold" style="font-size: 24px">Description</h1>
-                                        <h2>{{item.description}}</h2>
-                                        <h1 class="text-lg font-bold" style="font-size: 24px">Achivements</h1>
-                                        <h2>{{item.achievements}}</h2>
-                                        <h1 class="text-lg font-bold" style="font-size: 24px">Future Improvements</h1>
-                                        <h2>{{item.improvements}}</h2>
-                                        <h1 class="text-lg font-bold" style="font-size: 24px">Project created with</h1>
-                                        <div class="created-with-container">
-                                            <div class="created-with-box" v-for="el in item.elementsused">
-                                                <img v-if="el.logo != ''" v-bind:src="el.logo">
-                                                <!-- <div v-if="el.logo == ''" style="width: 30px; height: 30px; margin-right: 15px"></div> -->
-                                                <h3 class="font-bold">{{el.name}}</h3>
+                                    <div v-if="item.dropdownOpen">
+                                        <!-- <span style="height: 10px" class="block"></span> -->
+                                        <div class="current-project-image-container" v-if="item.images.length != 0">
+                                            <img v-for="image in item.images" v-bind:src="image" alt="" class="content-image">
+    
+                                        </div>
+    
+                                        <span style="height: 10px" class="block"></span>
+                                        <div v-if="item.description != ''">
+                                            <h1 class="text-lg font-bold" style="font-size: 24px; margin-bottom: 25px">Description</h1>
+                                            <h2 style="margin-bottom:50px">{{item.description}}</h2>
+                                        </div>
+    
+    
+                                        <div class="text-content" v-if="item.currentProject == false">
+                                            <span style="height: 10px" class="block"></span>
+                                            <h1 class="text-lg font-bold" style="font-size: 24px">Achivements</h1>
+                                            <h2>{{item.achievements}}</h2>
+                                            <h1 class="text-lg font-bold" style="font-size: 24px">Future Improvements</h1>
+                                            <h2>{{item.improvements}}</h2>
+                                            <h1 class="text-lg font-bold" style="font-size: 24px">Project created with</h1>
+                                            <div class="created-with-container">
+                                                <div class="created-with-box" v-for="el in item.elementsused">
+                                                    <img v-if="el.logo != ''" v-bind:src="el.logo">
+                                                    <!-- <div v-if="el.logo == ''"
+                                                        style="width: 30px; height: 30px; margin-right: 15px"></div> -->
+                                                    <h3 class="font-bold">{{el.name}}</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="text-content" v-if="item.currentProject == true">
+                                            <span style="height: 10px" class="block"></span>
+                                            <div v-if="item.elementsused.length != 0">
+                                                <h1 class="text-lg font-bold" style="font-size: 24px">Project created with</h1>
+                                                <div class="created-with-container">
+                                                    <div class="created-with-box" v-for="el in item.elementsused">
+                                                        <img v-if="el.logo != ''" v-bind:src="el.logo">
+                                                        <!-- <div v-if="el.logo == ''"
+                                                            style="width: 30px; height: 30px; margin-right: 15px"></div> -->
+                                                        <h3 class="font-bold">{{el.name}}</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div v-if="item.ToDoList.length != 0">
+                                                <h1 class="text-lg font-bold" style="font-size: 24px">To Do List</h1>
+                                                <h2 style="margin-bottom: 20px">Items in list: <span class="font-bold">{{item.ToDoList.length}}</span></h2>
+                                                <span style="height: 10px" class="block"></span>
+                                                <div v-for="todos in item.ToDoList">
+                                                    <h2 :class="{projectToDoUnfinished: !todos.completed}" :class="{projectToDoFinished: todos.completed}">{{todos.content}}</h2>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -432,7 +536,7 @@
                                     <h1 class="h1-scale" class="text-3xl font-bold p-2"></h1>
                                     <h1 class="h1-nonscale font-bold vueimg">{{item.title}}
                                         <span class="current-project" v-if="item.currentProject == true">
-                                            Current Project
+                                            WIP
                                         </span>
                                     </h1>
                                 </div>
@@ -451,8 +555,8 @@
 
                                     <span style="height: 10px" class="block"></span>
                                     <div v-if="item.description != ''">
-                                        <h1 class="text-lg font-bold" style="font-size: 24px">Description</h1>
-                                        <h2>{{item.description}}</h2>
+                                        <h1 class="text-lg font-bold" style="font-size: 24px; margin-bottom: 25px">Description</h1>
+                                        <h2 style="margin-bottom:50px">{{item.description}}</h2>
                                     </div>
 
 
@@ -486,13 +590,12 @@
                                         </div>
                                         <div v-if="item.ToDoList.length != 0">
                                             <h1 class="text-lg font-bold" style="font-size: 24px">To Do List</h1>
+                                            <h2 style="margin-bottom: 20px">Items in list: <span class="font-bold">{{item.ToDoList.length}}</span></h2>
+                                            <span style="height: 10px" class="block"></span>
                                             <div v-for="todos in item.ToDoList">
                                                 <h2 :class="{projectToDoUnfinished: !todos.completed}" :class="{projectToDoFinished: todos.completed}">{{todos.content}}</h2>
                                             </div>
-
                                         </div>
-
-
                                     </div>
                                 </div>
                             </div>
