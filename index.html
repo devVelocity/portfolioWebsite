@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="/dist/style.css" rel="stylesheet">
+    <link href="/dist/output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script defer src="/dist/current/JS/components.js"></script>
+    <script defer src="/dist/current/JS/pageload.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script src="/dist/gsap/gsap.min.js"></script>
+    <script src="/dist/gsap/ScrollTrigger.min.js"></script>
+    <script src="/dist/current/JS/devconsole.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/kute.js@2.2.2/dist/kute.min.js"></script>
+    <!-- <script defer src="/dist/current/JS/skillsmovement.js"></script>-->
+
+</head>
+
+<body class="">
+    <div id="app" class="w-screen h-screen">
+        <span id="topofpage"></span>
+        <div id="mobile-nav" :class="{activeNav: mobileNavOpen}">
+            <a href="#aboutme" @click="mobileNavOpen = false" class="mobile-nav-button">
+                About Me
+            </a>
+            <a href="#skills" @click="mobileNavOpen = false" class="mobile-nav-button">
+                Skills
+            </a>
+            <a href="#projects" @click="mobileNavOpen = false" class="mobile-nav-button">
+                Projects
+            </a>
+            <a href="#blog" @click="mobileNavOpen = false" class="mobile-nav-button">
+                Blog
+            </a>
+        </div>
+        <div :class="{navMenuOpen: mobileNavOpen}" class="w-full flex p-6 sticky z-20" style="height: 70px" id="nav-menu">
+            <div id="nav-mobile-button" @click="mobileNavOpen = !mobileNavOpen">
+            <div class="open-lines">
+                <div class="nav-mobile-line"></div>
+                <div class="nav-mobile-line"></div>
+                <div class="nav-mobile-line"></div>
+            </div>
+            <div class="close-lines">
+                <div class="nav-mobile-line"></div>
+                <div class="nav-mobile-line"></div>
+            </div>
+        </div>
+        <div id="nav-desktop-buttons">
+            <a href="#aboutme" class="nav-element">
+            About
+            </a>
+            <a href="#skills" class="nav-element">
+                Skills
+            </a>
+            <a href="#projects" class="nav-element">
+            Projects
+            </a>
+            <a href="#blog" class="nav-element">
+                Blog
+            </a>
+        </div>
+            <a href="index.html" id="nav-menu-title">
+                <h1 class="font-bold text-xl text-white">Kieran P</h1>
+            </a>
+        </div>
+        <div id="intro-banner-container">
+            <div id="intro-banner" class="">
+                <div id="left-svg-container">
+                    <svg preserveAspectRatio="none" viewBox="0 0 815 799" xmlns="http://www.w3.org/2000/svg"
+                        class="left-svg" id="left-blob">
+                        <defs>
+                            <linearGradient id="paint0_linear_4_21" x1="814" y1="225.5" x2="1.0219e-06" y2="218.5"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#5A69EE" />
+                                <stop offset="1" stop-color="#2d3aad" />
+                            </linearGradient>
+                        </defs>
+                        <g transform="translate(0,0)">
+                            <path id="lb1"
+                            d="M232 695C159.6 793.8 47.1667 804.167 0 797V0.5H573.5C613 25.3333 707.3 82.9 768.5 114.5C845 154 812.5 267.5 768.5 344.5C724.5 421.5 706 479 480.5 465C255 451 322.5 571.5 232 695Z"
+                            fill="url(#paint0_linear_4_21)" />
+                        </g>
+                        <g transform="translate(0,0)" style="visibility: hidden;">
+                            <path id="lb2" xmlns="http://www.w3.org/2000/svg"
+                            d="M219.58,710.65L212.927,718.104L205.984,725.29L198.759,732.191L191.261,738.794L183.5,745.087L175.491,751.06L167.246,756.704L158.781,762.012L150.107,766.97L141.243,771.582L132.206,775.843L123.008,779.746L113.668,783.295L104.2,786.486L94.618,789.316L84.937,791.788L75.17,793.899L65.333,795.644L55.436,797.02L45.494,798.016L35.521,798.618L25.531,798.802L15.544,798.528L5.585,797.728L0,792.641L0,782.648L0,777.712L0,772.656L0,762.664L0,752.672L0,742.679L0,732.687L0,722.695L0,712.703L0,702.711L0,692.718L0,682.726L0,672.734L0,662.742L0,652.749L0,642.757L0,632.765L0,622.773L0,612.781L0,602.788L0,592.796L0,582.804L0,572.812L0,562.819L0,552.827L0,542.835L0,532.843L0,522.851L0,512.858L0,502.866L0,492.874L0,482.882L0,472.889L0,462.897L0,452.905L0,442.913L0,432.921L0,422.928L0,412.936L0,402.944L0,392.952L0,382.959L0,372.967L0,362.975L0,352.983L0,342.99L0,332.998L0,323.006L0,313.014L0,303.022L0,293.029L0,283.037L0,273.045L0,263.053L0,253.06L0,243.068L0,233.076L0,223.084L0,213.189L0,213.092L0,203.099L0,193.107L0,183.115L0,173.123L0,163.13L0,153.138L0,143.146L0,133.154L0,123.162L0,113.169L0,103.177L0,93.185L0,83.193L0,73.2L0,63.208L0,53.216L0,43.224L0,33.232L0,23.239L0,13.247L0,3.255L7.236,0.5L17.229,0.5L27.221,0.5L37.213,0.5L47.205,0.5L57.198,0.5L67.19,0.5L77.182,0.5L87.174,0.5L97.166,0.5L107.159,0.5L117.151,0.5L127.143,0.5L137.135,0.5L147.128,0.5L157.12,0.5L167.112,0.5L177.104,0.5L187.096,0.5L197.089,0.5L207.081,0.5L217.073,0.5L227.065,0.5L237.058,0.5L247.05,0.5L257.042,0.5L267.034,0.5L277.026,0.5L287.019,0.5L297.011,0.5L307.003,0.5L316.995,0.5L326.988,0.5L336.98,0.5L346.972,0.5L354.081,0.5L356.964,0.5L366.956,0.5L376.949,0.5L386.941,0.5L396.933,0.5L406.925,0.5L416.918,0.5L426.91,0.5L436.902,0.5L446.894,0.5L456.886,0.5L466.879,0.5L476.871,0.5L486.863,0.5L496.855,0.5L506.848,0.5L516.84,0.5L526.832,0.5L536.824,0.5L546.816,0.5L556.809,0.5L566.801,0.5L576.289,2.251L584.765,7.542L593.257,12.808L601.762,18.053L610.28,23.277L618.809,28.483L627.35,33.67L635.901,38.838L644.465,43.988L653.039,49.118L661.626,54.228L670.225,59.318L678.837,64.384L687.463,69.427L696.105,74.444L704.762,79.433L713.438,84.391L722.133,89.314L730.85,94.199L739.592,99.038L748.362,103.827L757.165,108.555L766.008,113.208L774.749,118.043L782.919,123.785L790.317,130.491L796.795,138.09L802.244,146.457L806.611,155.437L809.936,164.855L812.27,174.566L813.726,184.449L814.402,194.416L814.391,204.406L813.78,214.378L813.498,216.836L812.643,224.304L811.042,234.166L809.028,243.953L806.642,253.655L803.926,263.271L800.902,272.794L797.601,282.225L794.041,291.561L790.237,300.801L786.205,309.943L781.952,318.984L777.489,327.924L772.815,336.756L767.942,345.479L763.026,354.178L758.134,362.891L753.192,371.576L748.121,380.185L742.833,388.663L737.24,396.943L731.261,404.947L724.825,412.588L717.887,419.775L710.438,426.432L702.502,432.499L694.128,437.945L685.381,442.772L676.324,446.989L667.031,450.656L657.551,453.813L647.93,456.509L638.204,458.793L628.399,460.717L618.538,462.327L608.633,463.641L598.698,464.709L588.741,465.552L578.77,466.192L568.788,466.649L558.8,466.94L548.809,467.083L538.817,467.091L528.826,466.978L518.836,466.756L508.849,466.424L498.866,466.001L488.887,465.489L478.912,464.909L468.933,464.394L458.947,464.052L448.956,463.893L438.964,463.966L428.977,464.278L419.003,464.869L409.053,465.779L399.144,467.058L391.785,468.328L389.299,468.757L379.553,470.958L369.952,473.719L360.566,477.138L351.478,481.283L342.798,486.224L334.643,491.99L327.137,498.579L320.351,505.907L314.308,513.86L308.979,522.309L304.271,531.12L300.094,540.196L296.322,549.449L292.849,558.817L289.576,568.258L286.416,577.737L283.29,587.228L280.133,596.708L276.886,606.158L273.502,615.56L269.934,624.894L266.152,634.142L262.128,643.288L257.832,652.309L253.259,661.192L248.389,669.917L243.219,678.467L237.756,686.833L232,695L225.939,702.943Z"
+                            fill="url(#paint0_linear_4_21)" />
+                        </g>
+    
+                    </svg>
+                </div>
+                <div id="center-svg-container">
+                    <svg id="center-blob" preserveAspectRatio="none" viewBox="0 0 2138 1147"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="paint0_linear_4_23" x1="177" y1="597" x2="2137" y2="593.5"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#4545c2" />
+                                <stop offset="1" stop-color="#2d2d78" />
+                            </linearGradient>
+                        </defs>
+                        <g transform="translate(0,0)">
+                            <path id="cb1"
+                                d="M1106.5 90.9999C839.5 165.5 710.8 385.2 436 458C161.2 530.8 107.8 651.5 41 729.5C-67 865.1 67.3333 991.666 148 1038C185 1075 700.42 1078.6 772.5 1056.5C953.5 1001 1427 987 1608 1107.5C1752.8 1203.9 2021.33 1101.33 2137.5 1038V611V77C2137.5 -72.7844 1476 35.5 1106.5 90.9999Z"
+                                fill="url(#paint0_linear_4_23)" />
+                        </g>
+                        <g transform="translate(0,-30)"  style="visibility: hidden;">
+                            <path id="cb2"
+                                d="M1244.5 411C977.5 485.5 692.8 338.2 418 411C143.2 483.8 89.8 604.5 23 682.5C-85 818.1 223.333 804.167 304 850.5C341 887.5 694.92 1130.6 767 1108.5C948 1053 1399.5 730 1580.5 850.5C1725.3 946.9 2003.33 1054.33 2119.5 991V564V30C2119.5 -119.784 1614 355.5 1244.5 411Z"
+                                fill="url(#paint0_linear_4_23)" style="visibility: hidden" />
+                        </g>
+    
+                    </svg>
+                </div>
+            </div>
+            <div id="intro-banner-content">
+                <h3>👋 Hello!</h3>
+                <span style="display:block; height:5px"></span>
+                <h1 class="font-bold">Welcome to my Portfolio!</h1>
+                <span style="display:block; height:20px"></span>
+                <h2>Programming</h2>
+                <h2>Frontend Development</h2>
+                <h2>Software Engineering</h2>
+                <h2>UI / UX Design</h2>
+            </div>
+        </div>
+        <div class="intro-banner-wave-svg" id="intro-svg-2">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <defs>
+                    <linearGradient id="IntroBannerGradient">
+                        <stop class="stop1" offset="0%" />
+                        <stop class="stop2" offset="100%" />
+                    </linearGradient>
+                </defs>
+                <path
+                    d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+                    opacity=".25" class="shape-fill"></path>
+                <path
+                    d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+                    opacity=".5" class="shape-fill"></path>
+                <path
+                    d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div>
+        <div id="about-me">
+            <span style="height: 100px" class="block" id="aboutme"></span>
+            <div class="about-me-info">
+                <div class="el about-me-el">
+                    <h1 class="font-bold title grad-text">About Me</h1>
+                    <span style="height: 30px" class="block"></span>
+                    <h3 class="text">Hello! I am a 17 year old Information Technology student in Greater Manchester. I have a passion in Programming, Software Development and Frontend Development. I also enjoy developing my Skills in User Interface and User Experience design, and using concepts in User Interface and User Experience design in my Frontend projects.</h3>
+                    <span style="height: 30px" class="block"></span>
+                </div>
+                <div class="el about-me-el">
+                    
+
+                    <h1 class="font-bold title"><span class="grad-text font-bold title">Get in Touch!</span></h1>
+                    <span style="height: 30px" class="block"></span>
+                    <a href="https://www.linkedin.com/in/07030b20b/" class="contact-button">
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/exeProgram" class="contact-button">
+                        GitHub
+                    </a>
+                    <!-- <a href="https://github.com/exeProgram" class="contact-button">
+                        Contact Form
+                    </a> -->
+
+                </div>
+            </div>
+        </div>
+        <div class="about-me-svg">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+            </svg>
+        </div>
+        <span style="height: 100px" class="block" id="skills"></span>
+        <div class="content-box" id="skills-container-container">
+            <h3 class="text-xl">Portfolio</h3>
+            <h1 class="font-bold" style="font-size: 48px">My Skills</h1>
+            <span style="height: 50px" class="block"></span>
+            <div class="skills-container-box">
+                <div class="item html-item" style="color: Tomato">
+                    <div class="item-title-container">
+                        <img src="/src/images/HTML5_Badge_512.png" alt="HTML Logo" class="item-logo">
+                        <h1 class="font-bold">HTML</h1>
+                    </div>
+                    <span style="height: 30px" class="block"></span>
+                    <h3>Skill Level:</h3>
+                    <div class="skills-perc-box">
+                        <div class="skills-perc-bar" id="htmlbar" style="background: Tomato"></div>
+                    </div>
+                </div>
+                <div class="item css-item" style="color: #264de4">
+                    <div class="item-title-container">
+                        <img src="/src/images/CSS3_logo_and_wordmark.svg.png" alt="Vue Logo" class="item-logo">
+                        <h1 class="font-bold">CSS3</h1>
+                    </div>
+                    <span style="height: 30px" class="block"></span>
+                    <h3>Skill Level:</h3>
+                    <div class="skills-perc-box">
+                        <div class="skills-perc-bar" id="cssbar" style="background: dodgerblue"></div>
+                    </div>
+                </div>
+                <div class="item" style="color: #F0DB4F">
+                    <div class="item-title-container">
+                        <img src="/src/images/2048px-Unofficial_JavaScript_logo_2.svg.png" alt="Vue Logo"
+                            class="item-logo">
+                        <h1 class="font-bold">JavaScript</h1>
+                    </div>
+                    <span style="height: 30px" class="block"></span>
+                    <h3>Skill Level:</h3>
+                    <div class="skills-perc-box">
+                        <div class="skills-perc-bar" id="javascriptbar" style="background: #F0DB4F"></div>
+                    </div>
+                </div>
+            </div>
+            <span style="height: 30px" class="block"></span>
+            <div class="skills-container-box">
+                <div class="item html-item" style="color: #41B883">
+                    <div class="item-title-container">
+                        <img src="/src/images/vue.png" alt="HTML Logo" class="item-logo">
+                        <h1 class="font-bold">Vue.JS</h1>
+                    </div>
+                    <span style="height: 30px" class="block"></span>
+                    <h3>Skill Level:</h3>
+                    <div class="skills-perc-box">
+                        <div class="skills-perc-bar" id="vuejsbar" style="background: #41B883"></div>
+                    </div>
+                </div>
+                <div class="item css-item" style="color: #264de4">
+                    <div class="item-title-container">
+                        <img src="/src/images/Typescript_logo_2020.png" alt="Vue Logo" class="item-logo">
+                        <h1 class="font-bold">TypeScript</h1>
+                    </div>
+                    <span style="height: 30px" class="block"></span>
+                    <h3>Skill Level:</h3>
+                    <div class="skills-perc-box">
+                        <div class="skills-perc-bar" id="typescriptbar" style="background: dodgerblue"></div>
+                    </div>
+                </div>
+                <div class="item" style="color: rgb(56 ,189 ,248)">
+                    <div class="item-title-container">
+                        <img src="/src/images/Tailwind_CSS_Logo.png" alt="Vue Logo" class="item-logo">
+                        <h1 class="font-bold">Tailwind</h1>
+                    </div>
+                    <span style="height: 30px" class="block"></span>
+                    <h3>Skill Level:</h3>
+                    <div class="skills-perc-box">
+                        <div class="skills-perc-bar" id="tailwindbar" style="background: rgb(56 ,189 ,248)"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span style="height: 100px" class="block" id="projects"></span>
+        <div class="content-box" id="projects-box">
+            <h3 class="text-xl">Portfolio</h3>
+            <h1 class="font-bold" style="font-size: 48px">My Projects</h1>
+            <span style="height: 50px" class="block"></span>
+            <h3 class="text-xl pb-4" style="font-size: 24px">Sort by:</h3>
+            <div class="filter-criteria-container">
+                <h3 class="filter-radio" style="font-size: 20px" v-bind:class="{active: currentFilter == el}"
+                    v-for="el in filterCriteria" @click="changeFilter(el)">{{el}}</h3>
+            </div>
+            <span style="height: 20px" class="block"></span>
+            <div class="filter-criteria-container">
+                <h3 class="filter-radio" style="font-size: 20px" v-bind:class="{active: !currentFilter2}"
+                    @click="changeFilter2(false)">All</h3>
+                <h3 class="filter-radio" style="font-size: 20px" v-bind:class="{active: currentFilter2}"
+                    @click="changeFilter2(true)">WIP Projects</h3>
+            </div>
+
+            <span style="height: 100px" class="block"></span>
+            <div class="road-box flex">
+                <div class="box-side-1 flex justify-center">
+                    <span class="line-existing existing-line"></span>
+                    <span class="line-existing line-animated" id="skills-line-animated"></span>
+                </div>
+                <div class="box-side-2" v-if="currentFilter != 'All'">
+                    <div class="box-side-2-content" v-if="currentFilter2 == true" v-for="item in finishedArray">
+                        <div v-for="element in item.elementsused" v-if="item.currentProject == true">
+                            <div class="box-title" v-if="element.name == currentFilter">
+                                <span class="line-extension"></span>
+                                <div class="title-container">
+                                    <div class="h1-shadow" style="background: #071429"></div>
+                                    <h1 class="h1-scale" class="text-3xl font-bold p-2" style="background: #071429">
+                                    </h1>
+                                    <h1 class="h1-nonscale font-bold vueimg">{{item.title}}
+                                        <span class="current-project" v-if="item.currentProject == true">
+                                            WIP
+                                        </span>
+                                    </h1>
+                                </div>
+                            </div>
+                            <div class="box-content"  v-if="element.name == currentFilter">
+                                <button @click="item.dropdownOpen = !item.dropdownOpen" v-if="!item.dropdownOpen"
+                                    class="showToggle">Show</button>
+                                <button @click="item.dropdownOpen = !item.dropdownOpen" v-if="item.dropdownOpen"
+                                    class="showToggle">Hide</button>
+                                <div v-if="item.dropdownOpen">
+                                    <!-- <span style="height: 10px" class="block"></span> -->
+                                    <h1 class="current-project font-bold">WIP</h1>
+                                    <span style="height: 30px" class="block"></span>
+                                    <div class="current-project-image-container">
+                                        <img v-for="image in item.images" v-bind:src="image" alt="" class="content-image">
+                                    </div>
+                                    <div v-if="item.dropdownOpen">
+                                        <!-- <span style="height: 10px" class="block"></span> -->
+                                        <div class="current-project-image-container" v-if="item.images.length != 0">
+                                            <img v-for="image in item.images" v-bind:src="image" alt="" class="content-image">
+    
+                                        </div>
+    
+                                        <span style="height: 10px" class="block"></span>
+                                        <div v-if="item.description != ''">
+                                            <h1 class="text-lg font-bold" style="font-size: 24px; margin-bottom: 25px">Description</h1>
+                                            <h2>{{item.description}}</h2>
+                                        </div>
+    
+    
+                                        <div class="text-content" v-if="item.currentProject == false">
+                                            <h1 class="text-lg font-bold" style="font-size: 24px">Achivements</h1>
+                                            <h2>{{item.achievements}}</h2>
+                                            <h1 class="text-lg font-bold" style="font-size: 24px">Future Improvements</h1>
+                                            <h2>{{item.improvements}}</h2>
+                                            <h1 class="text-lg font-bold" style="font-size: 24px">Project created with</h1>
+                                            <div class="created-with-container">
+                                                <div class="created-with-box" v-for="el in item.elementsused">
+                                                    <img v-if="el.logo != ''" v-bind:src="el.logo">
+                                                    <!-- <div v-if="el.logo == ''"
+                                                        style="width: 30px; height: 30px; margin-right: 15px"></div> -->
+                                                    <h3 class="font-bold">{{el.name}}</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="text-content" v-if="item.currentProject == true">
+                                            <span style="height: 10px" class="block"></span>
+                                            <div v-if="item.elementsused.length != 0">
+                                                <h1 class="text-lg font-bold" style="font-size: 24px">Project created with</h1>
+                                                <div class="created-with-container">
+                                                    <div class="created-with-box" v-for="el in item.elementsused">
+                                                        <img v-if="el.logo != ''" v-bind:src="el.logo">
+                                                        <!-- <div v-if="el.logo == ''"
+                                                            style="width: 30px; height: 30px; margin-right: 15px"></div> -->
+                                                        <h3 class="font-bold">{{el.name}}</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div v-if="item.ToDoList">
+                                                <div v-if="item.ToDoList.length != 0">
+                                                    <h1 class="text-lg font-bold" style="font-size: 24px">To Do List</h1>
+                                                    <h2 style="margin-bottom: 20px">Items in list: <span class="font-bold">{{item.ToDoList.length}}</span></h2>
+                                                    <span style="height: 10px" class="block"></span>
+                                                    <div class="project-do-list-flexcontainer">
+                                                        <div class="side-line">
+                                                            <div class="side-line-line"></div>
+                                                        </div>
+                                                        <div v-for="todos in item.ToDoList">
+                                                            <h3 :class="{projectToDoUnfinished: !todos.completed}" :class="{projectToDoFinished: todos.completed}"><span class="todo-box" v-if="!todos.completed"></span><span class="todo-box todo-completed" v-if="todos.completed"></span>{{todos.content}}</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div v-if="item.LinkToProject && item.LinkToProject.length != 0" style="margin-top:50px; margin-bottom: 50px">
+                                            <h1 class="text-lg font-bold" style="font-size: 24px">Project Links</h1>
+                                            <div v-if="item.LinkToProject.length != 0" v-for="links in item.LinkToProject">
+                                                <a :href="links.link" class="contact-button-lb">
+                                                    {{links.buttonTXT}}
+                                                </a>
+                                            </div>
+                                        </div>
+    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-side-2-content" v-if="currentFilter2 == false" v-for="item in finishedArray">
+                        <div v-for="element in item.elementsused">
+                            <div class="box-title" v-if="element.name == currentFilter">
+                                <span class="line-extension"></span>
+                                <div class="title-container">
+                                    <div class="h1-shadow"></div>
+                                    <h1 class="h1-scale" class="text-3xl font-bold p-2"></h1>
+                                    <h1 class="h1-nonscale font-bold vueimg">{{item.title}}
+                                        <span class="current-project" v-if="item.currentProject == true">
+                                            WIP
+                                        </span>
+                                    </h1>
+                                </div>
+                            </div>
+                            <div class="box-content" v-if="element.name == currentFilter">
+                                <button @click="item.dropdownOpen = !item.dropdownOpen" v-if="!item.dropdownOpen"
+                                    class="showToggle">Show</button>
+                                <button @click="item.dropdownOpen = !item.dropdownOpen" v-if="item.dropdownOpen"
+                                    class="showToggle">Hide</button>
+                                    <div v-if="item.dropdownOpen">
+                                        <!-- <span style="height: 10px" class="block"></span> -->
+                                        <div class="current-project-image-container" v-if="item.images.length != 0">
+                                            <img v-for="image in item.images" v-bind:src="image" alt="" class="content-image">
+    
+                                        </div>
+    
+                                        <span style="height: 10px" class="block"></span>
+                                        <div v-if="item.description != ''">
+                                            <h1 class="text-lg font-bold" style="font-size: 24px; margin-bottom: 25px">Description</h1>
+                                            <h2>{{item.description}}</h2>
+                                        </div>
+    
+    
+                                        <div class="text-content" v-if="item.currentProject == false">
+                                            <h1 class="text-lg font-bold" style="font-size: 24px">Achivements</h1>
+                                            <h2>{{item.achievements}}</h2>
+                                            <h1 class="text-lg font-bold" style="font-size: 24px">Future Improvements</h1>
+                                            <h2>{{item.improvements}}</h2>
+                                            <h1 class="text-lg font-bold" style="font-size: 24px">Project created with</h1>
+                                            <div class="created-with-container">
+                                                <div class="created-with-box" v-for="el in item.elementsused">
+                                                    <img v-if="el.logo != ''" v-bind:src="el.logo">
+                                                    <!-- <div v-if="el.logo == ''"
+                                                        style="width: 30px; height: 30px; margin-right: 15px"></div> -->
+                                                    <h3 class="font-bold">{{el.name}}</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="text-content" v-if="item.currentProject == true">
+                                            <span style="height: 10px" class="block"></span>
+                                            <div v-if="item.elementsused.length != 0">
+                                                <h1 class="text-lg font-bold" style="font-size: 24px">Project created with</h1>
+                                                <div class="created-with-container">
+                                                    <div class="created-with-box" v-for="el in item.elementsused">
+                                                        <img v-if="el.logo != ''" v-bind:src="el.logo">
+                                                        <!-- <div v-if="el.logo == ''"
+                                                            style="width: 30px; height: 30px; margin-right: 15px"></div> -->
+                                                        <h3 class="font-bold">{{el.name}}</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div v-if="item.ToDoList">
+                                                <div v-if="item.ToDoList.length != 0">
+                                                    <h1 class="text-lg font-bold" style="font-size: 24px">To Do List</h1>
+                                                    <h2 style="margin-bottom: 20px">Items in list: <span class="font-bold">{{item.ToDoList.length}}</span></h2>
+                                                    <span style="height: 10px" class="block"></span>
+                                                    <div class="project-do-list-flexcontainer">
+                                                        <div class="side-line">
+                                                            <div class="side-line-line"></div>
+                                                        </div>
+                                                        <div v-for="todos in item.ToDoList">
+                                                            <h3 :class="{projectToDoUnfinished: !todos.completed}" :class="{projectToDoFinished: todos.completed}"><span class="todo-box" v-if="!todos.completed"></span><span class="todo-box todo-completed" v-if="todos.completed"></span>{{todos.content}}</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div v-if="item.LinkToProject && item.LinkToProject.length != 0" style="margin-top:50px; margin-bottom: 50px">
+                                            <h1 class="text-lg font-bold" style="font-size: 24px">Project Links</h1>
+                                            <div v-if="item.LinkToProject.length != 0" v-for="links in item.LinkToProject">
+                                                <a :href="links.link" class="contact-button-lb">
+                                                    {{links.buttonTXT}}
+                                                </a>
+                                            </div>
+                                        </div>
+    
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-side-2" v-if="currentFilter == 'All'">
+                    <div v-if="currentFilter2 == true">
+                        <div :class="{open: item.dropdownOpen}" class="box-side-2-content" v-for="item,itemObjKey in finishedArray">
+                            <div class="box-title" v-if="item.currentProject == true">
+                                <span class="line-extension"></span>
+                                <div class="title-container">
+                                    <div class="h1-shadow"></div>
+                                    <h1 class="h1-scale" class="text-3xl font-bold p-2"></h1>
+                                    <h1 class="h1-nonscale font-bold vueimg">{{item.title}}
+                                        <span class="current-project" v-if="item.currentProject == true">
+                                            WIP
+                                        </span>
+                                    </h1>
+                                </div>
+                            </div>
+                            <div class="box-content" v-if="item.currentProject == true">
+                                <button @click="item.dropdownOpen = !item.dropdownOpen" v-if="!item.dropdownOpen"
+                                    class="showToggle">Show</button>
+                                <button @click="item.dropdownOpen = !item.dropdownOpen" v-if="item.dropdownOpen"
+                                    class="showToggle">Hide</button>
+                                    <div v-if="item.dropdownOpen">
+                                        <!-- <span style="height: 10px" class="block"></span> -->
+                                        <div class="current-project-image-container" v-if="item.images.length != 0">
+                                            <img v-for="image in item.images" v-bind:src="image" alt="" class="content-image">
+    
+                                        </div>
+    
+                                        <span style="height: 10px" class="block"></span>
+                                        <div v-if="item.description != ''">
+                                            <h1 class="text-lg font-bold" style="font-size: 24px; margin-bottom: 25px">Description</h1>
+                                            <h2>{{item.description}}</h2>
+                                        </div>
+    
+    
+                                        <div class="text-content" v-if="item.currentProject == false">
+                                            <h1 class="text-lg font-bold" style="font-size: 24px">Achivements</h1>
+                                            <h2>{{item.achievements}}</h2>
+                                            <h1 class="text-lg font-bold" style="font-size: 24px">Future Improvements</h1>
+                                            <h2>{{item.improvements}}</h2>
+                                            <h1 class="text-lg font-bold" style="font-size: 24px">Project created with</h1>
+                                            <div class="created-with-container">
+                                                <div class="created-with-box" v-for="el in item.elementsused">
+                                                    <img v-if="el.logo != ''" v-bind:src="el.logo">
+                                                    <!-- <div v-if="el.logo == ''"
+                                                        style="width: 30px; height: 30px; margin-right: 15px"></div> -->
+                                                    <h3 class="font-bold">{{el.name}}</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="text-content" v-if="item.currentProject == true">
+                                            <span style="height: 10px" class="block"></span>
+                                            <div v-if="item.elementsused.length != 0">
+                                                <h1 class="text-lg font-bold" style="font-size: 24px">Project created with</h1>
+                                                <div class="created-with-container">
+                                                    <div class="created-with-box" v-for="el in item.elementsused">
+                                                        <img v-if="el.logo != ''" v-bind:src="el.logo">
+                                                        <!-- <div v-if="el.logo == ''"
+                                                            style="width: 30px; height: 30px; margin-right: 15px"></div> -->
+                                                        <h3 class="font-bold">{{el.name}}</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div v-if="item.ToDoList">
+                                                <div v-if="item.ToDoList.length != 0">
+                                                    <h1 class="text-lg font-bold" style="font-size: 24px">To Do List</h1>
+                                                    <h2 style="margin-bottom: 20px">Items in list: <span class="font-bold">{{item.ToDoList.length}}</span></h2>
+                                                    <span style="height: 10px" class="block"></span>
+                                                    <div class="project-do-list-flexcontainer">
+                                                        <div class="side-line">
+                                                            <div class="side-line-line"></div>
+                                                        </div>
+                                                        <div v-for="todos in item.ToDoList">
+                                                            <h3 :class="{projectToDoUnfinished: !todos.completed}" :class="{projectToDoFinished: todos.completed}"><span class="todo-box" v-if="!todos.completed"></span><span class="todo-box todo-completed" v-if="todos.completed"></span>{{todos.content}}</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div v-if="item.LinkToProject && item.LinkToProject.length != 0" style="margin-top:50px; margin-bottom: 50px">
+                                            <h1 class="text-lg font-bold" style="font-size: 24px">Project Links</h1>
+                                            <div v-if="item.LinkToProject.length != 0" v-for="links in item.LinkToProject">
+                                                <a :href="links.link" class="contact-button-lb">
+                                                    {{links.buttonTXT}}
+                                                </a>
+                                            </div>
+                                        </div>
+    
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div v-if="currentFilter2 == false">
+                        <div class="box-side-2-content" v-for="item in finishedArray"
+                            :class="{open: item.dropdownOpen}">
+                            <div class="box-title">
+                                <span class="line-extension"></span>
+                                <div class="title-container">
+                                    <div class="h1-shadow"></div>
+                                    <h1 class="h1-scale" class="text-3xl font-bold p-2"></h1>
+                                    <h1 class="h1-nonscale font-bold vueimg">{{item.title}}
+                                        <span class="current-project" v-if="item.currentProject == true">
+                                            WIP
+                                        </span>
+                                    </h1>
+                                </div>
+                            </div>
+                            <div class="box-content">
+                                <button @click="item.dropdownOpen = !item.dropdownOpen" v-if="!item.dropdownOpen"
+                                    class="showToggle">Show</button>
+                                <button @click="item.dropdownOpen = !item.dropdownOpen" v-if="item.dropdownOpen"
+                                    class="showToggle">Hide</button>
+                                <div v-if="item.dropdownOpen">
+                                    <!-- <span style="height: 10px" class="block"></span> -->
+                                    <div class="current-project-image-container" v-if="item.images.length != 0">
+                                        <img v-for="image in item.images" v-bind:src="image" alt="" class="content-image">
+
+                                    </div>
+
+                                    <span style="height: 10px" class="block"></span>
+                                    <div v-if="item.description != ''">
+                                        <h1 class="text-lg font-bold" style="font-size: 24px; margin-bottom: 25px">Description</h1>
+                                        <h2>{{item.description}}</h2>
+                                    </div>
+
+
+                                    <div class="text-content" v-if="item.currentProject == false">
+                                        <h1 class="text-lg font-bold" style="font-size: 24px">Achivements</h1>
+                                        <h2>{{item.achievements}}</h2>
+                                        <h1 class="text-lg font-bold" style="font-size: 24px">Future Improvements</h1>
+                                        <h2>{{item.improvements}}</h2>
+                                        <h1 class="text-lg font-bold" style="font-size: 24px">Project created with</h1>
+                                        <div class="created-with-container">
+                                            <div class="created-with-box" v-for="el in item.elementsused">
+                                                <img v-if="el.logo != ''" v-bind:src="el.logo">
+                                                <!-- <div v-if="el.logo == ''"
+                                                    style="width: 30px; height: 30px; margin-right: 15px"></div> -->
+                                                <h3 class="font-bold">{{el.name}}</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-content" v-if="item.currentProject == true">
+                                        <span style="height: 10px" class="block"></span>
+                                        <div v-if="item.elementsused.length != 0">
+                                            <h1 class="text-lg font-bold" style="font-size: 24px">Project created with</h1>
+                                            <div class="created-with-container">
+                                                <div class="created-with-box" v-for="el in item.elementsused">
+                                                    <img v-if="el.logo != ''" v-bind:src="el.logo">
+                                                    <!-- <div v-if="el.logo == ''"
+                                                        style="width: 30px; height: 30px; margin-right: 15px"></div> -->
+                                                    <h3 class="font-bold">{{el.name}}</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div v-if="item.ToDoList">
+                                            <div v-if="item.ToDoList.length != 0">
+                                                <h1 class="text-lg font-bold" style="font-size: 24px">To Do List</h1>
+                                                <h2 style="margin-bottom: 20px">Items in list: <span class="font-bold">{{item.ToDoList.length}}</span></h2>
+                                                <span style="height: 10px" class="block"></span>
+                                                <div class="project-do-list-flexcontainer">
+                                                    <div class="side-line">
+                                                        <div class="side-line-line"></div>
+                                                    </div>
+                                                    <div v-for="todos in item.ToDoList">
+                                                        <h3 :class="{projectToDoUnfinished: !todos.completed}" :class="{projectToDoFinished: todos.completed}"><span class="todo-box" v-if="!todos.completed"></span><span class="todo-box todo-completed" v-if="todos.completed"></span>{{todos.content}}</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div v-if="item.LinkToProject && item.LinkToProject.length != 0" style="margin-top:50px; margin-bottom: 50px">
+                                        <h1 class="text-lg font-bold" style="font-size: 24px">Project Links</h1>
+                                        <div v-if="item.LinkToProject.length != 0" v-for="links in item.LinkToProject">
+                                            <a :href="links.link" class="contact-button-lb">
+                                                {{links.buttonTXT}}
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span style="height: 150px" class="block" id="blog"></span>
+        <div id="blog-container">
+            <div class="blog-top-svg">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <defs>
+                        <linearGradient id="blogSVGGradient">
+                            <stop class="stop1" offset="0%" />
+                            <stop class="stop2" offset="100%" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                    <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                    <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+                </svg>
+            </div>
+            <div class="blog-fill-content">
+                <div class="blog-fill-inner">
+                    <span style="height: 20px" class="block"></span>
+                    <h3 class="text-xl">See what i'm currently working on!</h3>
+                    <a id="blog-link" href="https://projectworkblogp.blogspot.com/">
+                        <h1 class="font-bold" style="font-size: 48px">My Blog</h1>
+                        <svg width="30" height="30" viewBox="0 0 235 242" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M216 90C216 118.667 216 181.2 216 202C216 222.8 202 229.333 195 230C144.333 230 41 230 33 230C25 230 16.3333 218.667 13 213C13.3333 164.333 13.8 63.4 13 49C14.6667 44 21 33.8 33 33C45 32.2 94.6667 32.6667 118 33" stroke="black" stroke-width="24"/>
+                            <path d="M142 12H205L223 66" stroke="black" stroke-width="24"/>
+                            <path d="M100 152L202 16" stroke="black" stroke-width="24"/>
+                        </svg>
+                    </a>
+                    <span style="height: 50px" class="block"></span>
+                    <div class="iframe-container">
+                        <iframe id="blog-container-frame" src="https://projectworkblogp.blogspot.com/"></iframe>
+                    </div>
+                    <span style="height: 50px" class="block"></span>
+                </div>
+            </div>
+            <div class="blog-bottom-svg">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                    <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                    <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+                </svg>
+            </div>
+        </div>
+        <span style="height: 100px" class="block"></span>
+        <span id="footeranchor"></span>
+        <div id="footer">
+            <div class="footer-svg-wave">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                    <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                    <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+                </svg>
+            </div>
+            <div class="footer-content">
+                <span style="height: 35px" class="block"></span>
+                <div class="inner">
+                    <div class="flex-el footer-flex-el">
+                        <h1 class="font-bold grad-text">Website made with</h1>
+                        <br>
+                        <h3 class="li-before footer-madewith-liitem">HTML</h3>
+                        <br>
+                        <h3 class="li-before footer-madewith-liitem">CSS</h3>
+                        <br>
+                        <h3 class="li-before footer-madewith-liitem">JavaScript</h3>
+                        <br>
+                        <h3 class="li-before footer-madewith-liitem">VueJS</h3>
+                        <br>
+                        <h3 class="li-before footer-madewith-liitem">KUTE</h3>
+                        <br>
+                        <h3 class="li-before footer-madewith-liitem">GSAP</h3>
+                        <br>
+                        <span class="block" style="height:30px"></span>
+                        <br>
+                        <h3 class="li-before footer-madewith-liitem">Lots of time</h3>
+                        <br>
+                        <h3 class="li-before footer-madewith-liitem"> > 2,000 Cups of Tea</h3>
+                        <br>
+                    </div>
+                    <!-- <div class="flex-el">
+                        <h1 class="font-bold grad-text">Also made with:</h1>
+                    </div> -->
+                    <div class="flex-el footer-flex-el">
+                        <h1 class="font-bold"><span class="grad-text">Get in Touch</span></h1>
+                        <br>
+                        <a href="https://www.linkedin.com/in/07030b20b/" class="contact-button">
+                            LinkedIn
+                        </a>
+                        <br>
+                        <a href="https://github.com/exeProgram" class="contact-button">
+                            GitHub
+                        </a>
+                        <br>
+                        <!-- <a href="https://github.com/exeProgram" class="contact-button">
+                            Contact Form
+                        </a> -->
+                        
+                    </div>
+                    <div class="flex-el footer-flex-el">
+                        <h1 class="font-bold grad-text">Blog</h1>
+                        <br>
+                        <a href="https://projectworkblogp.blogspot.com/" class="contact-button">
+                            Blog
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-bar">
+            <h1>You have reached the bottom of the page</h1>
+            <a href="#topofpage" class="regular-button">
+                Go to Top
+            </a>
+        </div>
+    </div>
+
+    <span style="height: 100px" class="block"></span>
+    <!-- <div id="devConsole" class="w-screen h-screen z-30 fixed top-0 bg-opacity-60 bg-black flex justify-center items-center">
+        <div class="bg-zinc-700 rounded-lg p-4 flex items-center flex-col">
+            <h1 class="text-center text-xl font-bold p-2 text-white">Dev Console</h1>
+            <h3 class="text-center text-white">Congrats! You found the Dev Console, have a reward!</h3>
+            <span class="h-2 block" style="height: 15px"></span>
+            <a href="https://youtu.be/dQw4w9WgXcQ" class="navigation-button text-xl pl-8 pr-8 mt-4 mb-4 w-full text-center">
+                Reward
+            </a>
+            <a href="#" onclick="devConsoleClose()" class="navigation-button nav-red text-xl pl-8 pr-8 w-full text-center">
+                Close
+            </a>
+        </div>
+    </div> -->
+    <script src="/src/app.js"></script>
+    <script src="/dist/current/JS/gsapworking.js"></script>
+
+</body>
+
+</html>
