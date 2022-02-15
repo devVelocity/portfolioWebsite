@@ -21,7 +21,7 @@
 
     --itembackground: rgb(200,200,200);
     --itemtext: rgb(20,20,20);
-    --itemborderradius: 40px;
+    --itemborderradius: 20px;
 
     --buttonBackground: rgb(190,190,190);
     --buttonColour: rgb(50,50,50);
@@ -584,7 +584,7 @@ h1,h2,h3,h4,h5,h6,a,p{
     width: 50%;
     background: rgb(20,20,20);
     background: var(--itembackground);
-    border-radius: 40px;
+    border-radius: 10px;
     border-radius: var(--itemborderradius);
     padding: 30px;
     box-shadow: 0px 0px -50px 5px;
@@ -1485,9 +1485,6 @@ h1,h2,h3,h4,h5,h6,a,p{
     width: 100%;
 }
 
-#footer .footer-content .flex-el:first-of-type{
-    width: 150%;
-}
 
 
 .footer-content .flex-el h1{
@@ -1515,6 +1512,7 @@ h1,h2,h3,h4,h5,h6,a,p{
     display: flex;
     gap: 50px;
     padding-bottom: 100px;
+    justify-content: space-between;
 
 }
 
