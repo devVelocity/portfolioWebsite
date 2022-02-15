@@ -220,6 +220,8 @@ h1,h2,h3,h4,h5,h6,a,p{
     -webkit-box-shadow: 0px 4px 34px 13px rgba(0,0,0,0.42); 
     box-shadow: 0px 4px 34px 13px rgba(0,0,0,0.42);
     width: 100vw;
+    padding-bottom: 30px;
+    border-bottom: 4px solid rgb(35,35,35)
     
 }
 
