@@ -496,7 +496,15 @@ h1,h2,h3,h4,h5,h6,a,p{
     transform: translateY(-5px);
     margin-left: 20px;
     padding-right: 10px;
-    
+    padding-left: 10px; 
+}
+
+@media screen and (max-width:600px){
+    .current-project{
+        width: calc(100% - 20px);
+        margin-left: 0px;
+        margin-top: 20px;
+    }
 }
 
 .content-box .filter-criteria-container{
@@ -745,11 +753,11 @@ h1,h2,h3,h4,h5,h6,a,p{
     transition: 0.3s opacity ease-in-out
 }
 
-.box-content .text-content h1{
+.box-content h1{
     margin-bottom: 25px;
 }
 
-.box-content .text-content h2{
+.box-content h2{
     margin-bottom: 50px;
 }
 
@@ -1593,4 +1601,27 @@ h1,h2,h3,h4,h5,h6,a,p{
     background;: var(--bottombarbuttonhover);
     color: var(--bottombarbuttontexthover);
 
+}
+
+.project-do-list-flexcontainer h2{
+    margin-bottom: 0px;
+}
+
+.project-do-list-flexcontainer{
+    display: flex;
+    gap: 10px;
+}
+
+.project-do-list-flexcontainer .side-line{
+    width: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-do-list-flexcontainer .side-line .side-line-line{
+    height: 100%;
+    width: 3px;
+    background: rgb(200,200,200);
+    background: var(--projectLineExisting)
 }

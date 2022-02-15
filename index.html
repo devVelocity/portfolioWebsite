@@ -329,7 +329,7 @@
                                         <span style="height: 10px" class="block"></span>
                                         <div v-if="item.description != ''">
                                             <h1 class="text-lg font-bold" style="font-size: 24px; margin-bottom: 25px">Description</h1>
-                                            <h2 style="margin-bottom:50px">{{item.description}}</h2>
+                                            <h2>{{item.description}}</h2>
                                         </div>
     
     
@@ -361,12 +361,19 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div v-if="item.ToDoList.length != 0">
-                                                <h1 class="text-lg font-bold" style="font-size: 24px">To Do List</h1>
-                                                <h2 style="margin-bottom: 20px">Items in list: <span class="font-bold">{{item.ToDoList.length}}</span></h2>
-                                                <span style="height: 10px" class="block"></span>
-                                                <div v-for="todos in item.ToDoList">
-                                                    <h2 :class="{projectToDoUnfinished: !todos.completed}" :class="{projectToDoFinished: todos.completed}">{{todos.content}}</h2>
+                                            <div v-if="item.ToDoList">
+                                                <div v-if="item.ToDoList.length != 0">
+                                                    <h1 class="text-lg font-bold" style="font-size: 24px">To Do List</h1>
+                                                    <h2 style="margin-bottom: 20px">Items in list: <span class="font-bold">{{item.ToDoList.length}}</span></h2>
+                                                    <span style="height: 10px" class="block"></span>
+                                                    <div class="project-do-list-flexcontainer">
+                                                        <div class="side-line">
+                                                            <div class="side-line-line"></div>
+                                                        </div>
+                                                        <div v-for="todos in item.ToDoList">
+                                                            <h3 :class="{projectToDoUnfinished: !todos.completed}" :class="{projectToDoFinished: todos.completed}"><span class="todo-box"></span>{{todos.content}}</h3>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -378,6 +385,7 @@
                                                 </a>
                                             </div>
                                         </div>
+    
                                     </div>
                                 </div>
                             </div>
@@ -412,7 +420,7 @@
                                         <span style="height: 10px" class="block"></span>
                                         <div v-if="item.description != ''">
                                             <h1 class="text-lg font-bold" style="font-size: 24px; margin-bottom: 25px">Description</h1>
-                                            <h2 style="margin-bottom:50px">{{item.description}}</h2>
+                                            <h2>{{item.description}}</h2>
                                         </div>
     
     
@@ -444,12 +452,19 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div v-if="item.ToDoList.length != 0">
-                                                <h1 class="text-lg font-bold" style="font-size: 24px">To Do List</h1>
-                                                <h2 style="margin-bottom: 20px">Items in list: <span class="font-bold">{{item.ToDoList.length}}</span></h2>
-                                                <span style="height: 10px" class="block"></span>
-                                                <div v-for="todos in item.ToDoList">
-                                                    <h2 :class="{projectToDoUnfinished: !todos.completed}" :class="{projectToDoFinished: todos.completed}">{{todos.content}}</h2>
+                                            <div v-if="item.ToDoList">
+                                                <div v-if="item.ToDoList.length != 0">
+                                                    <h1 class="text-lg font-bold" style="font-size: 24px">To Do List</h1>
+                                                    <h2 style="margin-bottom: 20px">Items in list: <span class="font-bold">{{item.ToDoList.length}}</span></h2>
+                                                    <span style="height: 10px" class="block"></span>
+                                                    <div class="project-do-list-flexcontainer">
+                                                        <div class="side-line">
+                                                            <div class="side-line-line"></div>
+                                                        </div>
+                                                        <div v-for="todos in item.ToDoList">
+                                                            <h3 :class="{projectToDoUnfinished: !todos.completed}" :class="{projectToDoFinished: todos.completed}"><span class="todo-box"></span>{{todos.content}}</h3>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -461,6 +476,7 @@
                                                 </a>
                                             </div>
                                         </div>
+    
                                     </div>
                             </div>
                         </div>
@@ -496,12 +512,11 @@
                                         <span style="height: 10px" class="block"></span>
                                         <div v-if="item.description != ''">
                                             <h1 class="text-lg font-bold" style="font-size: 24px; margin-bottom: 25px">Description</h1>
-                                            <h2 style="margin-bottom:50px">{{item.description}}</h2>
+                                            <h2>{{item.description}}</h2>
                                         </div>
     
     
                                         <div class="text-content" v-if="item.currentProject == false">
-                                            <span style="height: 10px" class="block"></span>
                                             <h1 class="text-lg font-bold" style="font-size: 24px">Achivements</h1>
                                             <h2>{{item.achievements}}</h2>
                                             <h1 class="text-lg font-bold" style="font-size: 24px">Future Improvements</h1>
@@ -529,23 +544,31 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div v-if="item.ToDoList.length != 0">
-                                                <h1 class="text-lg font-bold" style="font-size: 24px">To Do List</h1>
-                                                <h2 style="margin-bottom: 20px">Items in list: <span class="font-bold">{{item.ToDoList.length}}</span></h2>
-                                                <span style="height: 10px" class="block"></span>
-                                                <div v-for="todos in item.ToDoList">
-                                                    <h2 :class="{projectToDoUnfinished: !todos.completed}" :class="{projectToDoFinished: todos.completed}">{{todos.content}}</h2>
-                                                </div>
-                                            </div>
-                                            <div v-if="item.LinkToProject" style="margin-top:50px; margin-bottom: 50px">
-                                                <h1 class="text-lg font-bold" style="font-size: 24px">Project Links</h1>
-                                                <div v-if="item.LinkToProject.length != 0" v-for="links in item.LinkToProject">
-                                                    <a :href="links.link" class="contact-button-lb">
-                                                        {{links.buttonTXT}}
-                                                    </a>
+                                            <div v-if="item.ToDoList">
+                                                <div v-if="item.ToDoList.length != 0">
+                                                    <h1 class="text-lg font-bold" style="font-size: 24px">To Do List</h1>
+                                                    <h2 style="margin-bottom: 20px">Items in list: <span class="font-bold">{{item.ToDoList.length}}</span></h2>
+                                                    <span style="height: 10px" class="block"></span>
+                                                    <div class="project-do-list-flexcontainer">
+                                                        <div class="side-line">
+                                                            <div class="side-line-line"></div>
+                                                        </div>
+                                                        <div v-for="todos in item.ToDoList">
+                                                            <h3 :class="{projectToDoUnfinished: !todos.completed}" :class="{projectToDoFinished: todos.completed}"><span class="todo-box"></span>{{todos.content}}</h3>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        <div v-if="item.LinkToProject" style="margin-top:50px; margin-bottom: 50px">
+                                            <h1 class="text-lg font-bold" style="font-size: 24px">Project Links</h1>
+                                            <div v-if="item.LinkToProject.length != 0" v-for="links in item.LinkToProject">
+                                                <a :href="links.link" class="contact-button-lb">
+                                                    {{links.buttonTXT}}
+                                                </a>
+                                            </div>
+                                        </div>
+    
                                     </div>
                             </div>
                         </div>
@@ -580,7 +603,7 @@
                                     <span style="height: 10px" class="block"></span>
                                     <div v-if="item.description != ''">
                                         <h1 class="text-lg font-bold" style="font-size: 24px; margin-bottom: 25px">Description</h1>
-                                        <h2 style="margin-bottom:50px">{{item.description}}</h2>
+                                        <h2>{{item.description}}</h2>
                                     </div>
 
 
@@ -612,12 +635,19 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div v-if="item.ToDoList.length != 0">
-                                            <h1 class="text-lg font-bold" style="font-size: 24px">To Do List</h1>
-                                            <h2 style="margin-bottom: 20px">Items in list: <span class="font-bold">{{item.ToDoList.length}}</span></h2>
-                                            <span style="height: 10px" class="block"></span>
-                                            <div v-for="todos in item.ToDoList">
-                                                <h2 :class="{projectToDoUnfinished: !todos.completed}" :class="{projectToDoFinished: todos.completed}">{{todos.content}}</h2>
+                                        <div v-if="item.ToDoList">
+                                            <div v-if="item.ToDoList.length != 0">
+                                                <h1 class="text-lg font-bold" style="font-size: 24px">To Do List</h1>
+                                                <h2 style="margin-bottom: 20px">Items in list: <span class="font-bold">{{item.ToDoList.length}}</span></h2>
+                                                <span style="height: 10px" class="block"></span>
+                                                <div class="project-do-list-flexcontainer">
+                                                    <div class="side-line">
+                                                        <div class="side-line-line"></div>
+                                                    </div>
+                                                    <div v-for="todos in item.ToDoList">
+                                                        <h3 :class="{projectToDoUnfinished: !todos.completed}" :class="{projectToDoFinished: todos.completed}"><span class="todo-box"></span>{{todos.content}}</h3>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

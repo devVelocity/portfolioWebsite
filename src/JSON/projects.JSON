@@ -27,7 +27,7 @@
     "description":"",
     "elementsused":[],
     "currentProject": true,
-    "ToDoList":[{"content":"lorem","completed":false}],
+    "ToDoList":[{"content":"Complete a Home Page","completed":false}],
     "LinkToProject":[{"buttonTXT":"Github","link":""}]
     }
 ]
