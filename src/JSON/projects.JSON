@@ -27,7 +27,9 @@
     "description":"",
     "elementsused":[],
     "currentProject": true,
-    "ToDoList":[{"content":"Complette a Login Page w/Firebase Auth","completed":true},{"content":"Complete a Home Page","completed":false}],
-    "LinkToProject":[{"buttonTXT":"GitHub","link":""}]
+    "ToDoList":[{"content":"Complette a Login Page w/Firebase Auth","completed":true},{"content":"Complete a Home Page","completed":false}]
+    
     }
 ]
+
+
