@@ -484,6 +484,12 @@ h1,h2,h3,h4,h5,h6,a,p{
     color: white;
     color: var(--filterradioselectedcolour);
     text-shadow: 1px 3px rgba(50,50,50,0.71); 
+    display: inline-block;
+    width: auto;
+    font-size: clamp(12px,3vw,15px);
+    transform: translateY(-5px);
+    margin-left: 20px;
+    
 }
 
 .content-box .filter-criteria-container{
