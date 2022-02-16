@@ -1577,7 +1577,7 @@ h1,h2,h3,h4,h5,h6,a,p{
 .bottom-bar{
     background: rgb(15,15,20);
     background: var(--bottombarbackground);
-    min-height: 70px;
+    min-height: 30px;
     width: 100vw;
     position: relative;
     bottom: 0px;
@@ -1586,8 +1586,12 @@ h1,h2,h3,h4,h5,h6,a,p{
     justify-content: space-between;
     padding-left: 30px;
     padding-right: 40px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.bottom-bar .regular-button{
+    font-size: clamp(14px,3vw,16px)
 }
 
 @media screen and (max-width: 500px){
