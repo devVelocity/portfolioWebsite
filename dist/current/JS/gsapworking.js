@@ -41,6 +41,7 @@ var vueJSLevel = "50%"
 var typescriptLevel = "65%"
 var tailwindLevel = "35%"
 var pythonLevel = "35%"
+var vbLevel = "25%"
 
 let percbar = gsap.timeline({
     scrollTrigger: {
@@ -60,6 +61,7 @@ percbar.fromTo('#vuejsbar', { duration: 1, width: 0 }, { width: vueJSLevel })
 percbar.fromTo('#typescriptbar', { duration: 1, width: 0 }, { width: typescriptLevel })
 percbar.fromTo('#tailwindbar', { duration: 1, width: 0 }, { width: tailwindLevel })
 percbar.fromTo('#pythonbar', { duration: 1, width: 0 }, { width: pythonLevel })
+percbar.fromTo('#visualbasicbar', { duration: 1, width: 0 }, { width: vbLevel })
 
 
 let tl = gsap.timeline({
