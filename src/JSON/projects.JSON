@@ -7,9 +7,7 @@
     "improvements":"Improvement could be used with the Animations of the website, sometimes there may have been multiple animations occurring at the same time which hurts performance. I could have removed some animations or taken measures (such as staggering them) in order to improve performance. I also think more consideration to the User Interface and User Experience should have happend with the Application Form, as they could be designed to look better and be more easier to use.",
     "elementsused":[{"logo":"/src/images/HTML5_Badge_512.png","name":"HTML"},{"logo":"/src/images/CSS3_logo_and_wordmark.svg.png","name":"CSS"},{"logo":"/src/images/2048px-Unofficial_JavaScript_logo_2.svg.png","name":"JS"}],
     "currentProject":false,
-    "dropdownOpen": false,
-    "LinkToProject":[{"buttonTXT":"Github","link":""}]
-        
+    "dropdownOpen": false
     },
     {
     "title":"The Pizza Restauraunt",
