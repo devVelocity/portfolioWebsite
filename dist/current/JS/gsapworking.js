@@ -34,35 +34,6 @@
 
 
 
-var htmlLevel = "90%"
-var cssLevel = "80%"
-var javascriptLevel = "55%"
-var vueJSLevel = "50%"
-var typescriptLevel = "65%"
-var tailwindLevel = "35%"
-var pythonLevel = "35%"
-var vbLevel = "25%"
-
-let percbar = gsap.timeline({
-    scrollTrigger: {
-        trigger: '.item',
-        scrub: 1,
-        start: '-600',
-        end: '-500',
-        ease: 'sine.in'
-    },
-})
-
-
-percbar.fromTo('#htmlbar', { duration: 1, width: 0 }, { width: htmlLevel })
-percbar.fromTo('#cssbar', { duration: 1, width: 0 }, { width: cssLevel })
-percbar.fromTo('#javascriptbar', { duration: 1, width: 0 }, { width: javascriptLevel })
-percbar.fromTo('#vuejsbar', { duration: 1, width: 0 }, { width: vueJSLevel })
-percbar.fromTo('#typescriptbar', { duration: 1, width: 0 }, { width: typescriptLevel })
-percbar.fromTo('#tailwindbar', { duration: 1, width: 0 }, { width: tailwindLevel })
-percbar.fromTo('#pythonbar', { duration: 1, width: 0 }, { width: pythonLevel })
-percbar.fromTo('#visualbasicbar', { duration: 1, width: 0 }, { width: vbLevel })
-
 
 let tl = gsap.timeline({
     scrollTrigger: {
